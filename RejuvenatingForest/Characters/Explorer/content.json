@@ -1,0 +1,32 @@
+{
+    "Format": "1.23.0",
+    "Changes": [
+        {
+            "Action": "Load",
+            "Target": "Characters/Explorer",
+            "FromFile": "assets/ExplorerPlaceholder.png",
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/Explorer",
+            "FromFile": "assets/explorerDialogue.png",
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/Dialogue/Explorer",
+            "FromFile": "assets/ExplorerDialogue.json",
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/schedules/Explorer",
+            "FromFile": "assets/ExplorerSchedule.json",
+        },
+		{
+            "Action": "EditData",
+            "Target": "Data/NPCDispositions",
+            "Entries": {
+                "Explorer": "adult/rude/neutral/positive/male/datable//Town/summer 7//BusStop 19 4/Dobson"
+            },
+        },
+    ]
+}
