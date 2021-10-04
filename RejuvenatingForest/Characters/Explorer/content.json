@@ -24,9 +24,9 @@
 		{
             "Action": "EditData",
             "Target": "Data/NPCDispositions",
-            "Entries": {
-                "Explorer": "adult/rude/neutral/positive/male/datable//Town/summer 7//BusStop 19 4/Dobson"
-            },
+      "Entries": {
+        "Explorer": "adult/rude/neutral/positive/male/datable/null/Town/summer 7//BusStop 194/Explorer"
+      },
         },
     ]
 }

@@ -61,7 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Twizard\TwizardDialogue.png" />
-    <Content Include="Assets\Explorer\explorerDialogue.png" />
+    <Content Include="Assets\Explorer\explorerPortrait.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Pathoschild.Stardew.ModBuildConfig.3.3.0\build\Pathoschild.Stardew.ModBuildConfig.targets" Condition="Exists('..\packages\Pathoschild.Stardew.ModBuildConfig.3.3.0\build\Pathoschild.Stardew.ModBuildConfig.targets')" />

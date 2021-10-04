@@ -4,12 +4,16 @@ using StardewModdingAPI;
 using StardewModdingAPI.Events;
 using StardewModdingAPI.Utilities;
 using StardewValley;
+using System.Collections.Generic;
+using Microsoft.Xna;
 
 namespace RejuvenatingForest
 {
     /// <summary>The mod entry point.</summary>
-    public class ModEntry : Mod, IAssetLoader
+    public class ModEntry : Mod, IAssetLoader, IAssetEditor
     {
+        IDictionary<string, string> explorerDialogue;
+        IDictionary<string, string> explorerSchedule;
         /*********
         ** Public methods
         *********/
@@ -18,33 +22,72 @@ namespace RejuvenatingForest
         public override void Entry(IModHelper helper)
         {
             helper.Events.Input.ButtonPressed += this.OnButtonPressed;
-            //trying to get explorer npc to spawn, I have all the files created but getting him to spawn through code is proving, difficult
-            //only information I can find that's of use is using the content patcher mod so it's just going to take a bunch more digging in the 
-            //documentation I guess, which is kinda not too helpful but, yeah...
-            //AnimatedSprite sprite = helper.Content.Load<AnimatedSprite>("assets/ExplorerPlaceholder.png", ContentSource.ModFolder);
-            //NPC explorer(sprite, Vector2(20,20), 1, "Explorer", null);
-            //Game1.getLocationFromName("Town").addCharacter(explorer);
+            explorerDialogue = helper.Content.Load<IDictionary<string, string>>("Characters/Explorer/assets/ExplorerDialogue.json", ContentSource.ModFolder);
+            explorerSchedule = helper.Content.Load<IDictionary<string, string>>("Characters/Explorer/assets/ExplorerSchedule.json", ContentSource.ModFolder);
+            //CanLoad<T>(explorerDialogue, "Characters/Explorer/assets/ExplorerDialogue");
+            //Load<T>(explorerDialogue, "Characters/Explorer/assets/ExplorerDialogue");
         }
 
-        /*
-        //trying to add explorer npc things
+        
+        /*//trying to add explorer npc things
         public bool CanLoad<T>(IAssetInfo asset)
         {
-            return asset.AssetNameEquals("Characters/Dialogue/Explorer");
+            return asset.AssetNameEquals(path);
         }
 
         /// <summary>Load a matched asset.</summary>
         /// <param name="asset">Basic metadata about the asset being loaded.</param>
         public T Load<T>(IAssetInfo asset)
         {
-            return (T)(object)new Dictionary<string, string> // (T)(object) converts a known type to the generic 'T' placeholder
+            return (T)(IDictionary<string, string> data = helper.Content.Load<IDictionary<string, string>>(path, ContentSource.ModFolder));
+        }*/
+
+
+        public bool CanLoad<T>(IAssetInfo asset)
+        {
+            if(asset.AssetNameEquals("Characters/Explorer/assets/ExplorerDialogue"))
             {
-                ["Introduction"] = "Hi there! My name is the Explorer."
-            };
+                return true;
+            }
+            if(asset.AssetNameEquals("Characters/Explorer/assets/ExplorerSchedule"))
+            {
+                return true;
+            }
+            return false;
         }
-        */
 
+        public T Load<T>(IAssetInfo asset)
+        {
+            if(asset.AssetNameEquals("Characters/Explorer/assets/ExplorerDialogue"))
+            {
+                return (T)explorerDialogue;
+            }
+            if(asset.AssetNameEquals("Characters/Explorer/assets/ExplorerSchedule"))
+            {
+                return (T)explorerSchedule;
+            }
+            return default(T);
+        }
 
+        public bool CanEdit<T>(IAssetInfo asset)
+        {
+            if (asset.AssetNameEquals("Data/NPCDispositions"))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        
+        public void Edit<T>(IAssetData asset)
+        {
+            if (asset.AssetNameEquals("Data/NPCDispositions"))
+            {
+                IDictionary<string, string> data = asset.AsDictionary<string, string>().Data;
+                data.Add("Explorer", "adult/polite/outgoing/positive/male/not-datable//Town/fall 17//Forest 4 5/Explorer");
+            }
+        }
+        
 
         /*********
         ** Private methods
@@ -57,7 +100,7 @@ namespace RejuvenatingForest
             // ignore if player hasn't loaded a save yet
             if (!Context.IsWorldReady)
                 return;
-
+            
             // when you are loaded into the world, pressing buttons logs that button to the console
             this.Monitor.Log($"{Game1.player.Name} pressed {e.Button}.", LogLevel.Debug);
         }
