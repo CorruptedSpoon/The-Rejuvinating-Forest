@@ -6,6 +6,7 @@ using StardewModdingAPI.Utilities;
 using StardewValley;
 using System.Collections.Generic;
 using Microsoft.Xna;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace RejuvenatingForest
 {
@@ -14,6 +15,7 @@ namespace RejuvenatingForest
     {
         IDictionary<string, string> explorerDialogue;
         IDictionary<string, string> explorerSchedule;
+        Texture2D explorerSprite;
         /*********
         ** Public methods
         *********/
@@ -24,6 +26,7 @@ namespace RejuvenatingForest
             helper.Events.Input.ButtonPressed += this.OnButtonPressed;
             explorerDialogue = helper.Content.Load<IDictionary<string, string>>("Characters/Explorer/assets/ExplorerDialogue.json", ContentSource.ModFolder);
             explorerSchedule = helper.Content.Load<IDictionary<string, string>>("Characters/Explorer/assets/ExplorerSchedule.json", ContentSource.ModFolder);
+            explorerSprite = helper.Content.Load<Texture2D>("Characters/Explorer/assets/ExplorerSchedule.json", ContentSource.ModFolder);
             //CanLoad<T>(explorerDialogue, "Characters/Explorer/assets/ExplorerDialogue");
             //Load<T>(explorerDialogue, "Characters/Explorer/assets/ExplorerDialogue");
         }
