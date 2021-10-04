@@ -16,6 +16,7 @@ namespace RejuvenatingForest
         IDictionary<string, string> explorerDialogue;
         IDictionary<string, string> explorerSchedule;
         Texture2D explorerSprite;
+        Texture2D explorerPortrait;
         /*********
         ** Public methods
         *********/
@@ -24,35 +25,34 @@ namespace RejuvenatingForest
         public override void Entry(IModHelper helper)
         {
             helper.Events.Input.ButtonPressed += this.OnButtonPressed;
-            explorerDialogue = helper.Content.Load<IDictionary<string, string>>("Characters/Explorer/assets/ExplorerDialogue.json", ContentSource.ModFolder);
-            explorerSchedule = helper.Content.Load<IDictionary<string, string>>("Characters/Explorer/assets/ExplorerSchedule.json", ContentSource.ModFolder);
-            explorerSprite = helper.Content.Load<Texture2D>("Characters/Explorer/assets/ExplorerSchedule.json", ContentSource.ModFolder);
+            explorerDialogue = helper.Content.Load<IDictionary<string, string>>("Assets/Explorer/ExplorerDialogue.json", ContentSource.ModFolder);
+            explorerSchedule = helper.Content.Load<IDictionary<string, string>>("Assets/Explorer/ExplorerSchedule.json", ContentSource.ModFolder);
+            explorerSprite = helper.Content.Load<Texture2D>("Assets/Explorer/explorer.png", ContentSource.ModFolder);
+            explorerPortrait = helper.Content.Load<Texture2D>("Assets/Explorer/explorerPortrait.png", ContentSource.ModFolder);
             //CanLoad<T>(explorerDialogue, "Characters/Explorer/assets/ExplorerDialogue");
             //Load<T>(explorerDialogue, "Characters/Explorer/assets/ExplorerDialogue");
         }
 
-        
-        /*//trying to add explorer npc things
-        public bool CanLoad<T>(IAssetInfo asset)
+        public void OnRenderWorld(object sender, RenderedWorldEventArgs e)
         {
-            return asset.AssetNameEquals(path);
+            e.SpriteBatch.Draw(explorerSprite, )
         }
 
-        /// <summary>Load a matched asset.</summary>
-        /// <param name="asset">Basic metadata about the asset being loaded.</param>
-        public T Load<T>(IAssetInfo asset)
-        {
-            return (T)(IDictionary<string, string> data = helper.Content.Load<IDictionary<string, string>>(path, ContentSource.ModFolder));
-        }*/
-
-
         public bool CanLoad<T>(IAssetInfo asset)
         {
-            if(asset.AssetNameEquals("Characters/Explorer/assets/ExplorerDialogue"))
+            if(asset.AssetNameEquals("Assets/Explorer/ExplorerDialogue"))
             {
                 return true;
             }
-            if(asset.AssetNameEquals("Characters/Explorer/assets/ExplorerSchedule"))
+            if(asset.AssetNameEquals("Assets/Explorer/ExplorerSchedule"))
+            {
+                return true;
+            }
+            if (asset.AssetNameEquals("Assets/Explorer/explorer"))
+            {
+                return true;
+            }
+            if (asset.AssetNameEquals("Assets/Explorer/explorerPortrait"))
             {
                 return true;
             }
@@ -61,13 +61,21 @@ namespace RejuvenatingForest
 
         public T Load<T>(IAssetInfo asset)
         {
-            if(asset.AssetNameEquals("Characters/Explorer/assets/ExplorerDialogue"))
+            if(asset.AssetNameEquals("Assets/Explorer/ExplorerDialogue"))
             {
                 return (T)explorerDialogue;
             }
-            if(asset.AssetNameEquals("Characters/Explorer/assets/ExplorerSchedule"))
+            if(asset.AssetNameEquals("Assets/Explorer/ExplorerSchedule"))
             {
                 return (T)explorerSchedule;
+            }
+            if (asset.AssetNameEquals("Assets/Explorer/explorer"))
+            {
+                return (T)(object)explorerSprite;
+            }
+            if (asset.AssetNameEquals("Assets/Explorer/explorerPortrait"))
+            {
+                return (T)(object)explorerPortrait;
             }
             return default(T);
         }
