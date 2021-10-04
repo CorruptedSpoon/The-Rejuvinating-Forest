@@ -1,0 +1,32 @@
+{
+    "Format": "1.23.0",
+    "Changes": [
+        {
+            "Action": "Load",
+            "Target": "Characters/Twizard",
+            "FromFile": "assets/TwizardPlaceholder.png",
+        },
+        {
+            "Action": "Load",
+            "Target": "Portraits/Twizard",
+            "FromFile": "assets/TwizardDialogue.png",
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/Dialogue/Twizard",
+            "FromFile": "assets/TwizardDialogue.json",
+        },
+        {
+            "Action": "Load",
+            "Target": "Characters/schedules/Twizard",
+            "FromFile": "assets/TwizardSchedule.json",
+        },
+		{
+            "Action": "EditData",
+            "Target": "Data/NPCDispositions",
+            "Entries": {
+                "Twizard": "adult/rude/neutral/negative/male/not-datable/null/Other/winter 17//WizardHouse 4 17/Twizard"
+            },
+        },
+    ]
+}
