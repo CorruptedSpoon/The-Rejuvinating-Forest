@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Graphics;
 namespace RejuvenatingForest
 {
     /// <summary>The mod entry point.</summary>
-    public class ModEntry : Mod, IAssetLoader, IAssetEditor
+    public class ModEntry : Mod //, IAssetLoader, IAssetEditor
     {
         IDictionary<string, string> explorerDialogue;
         IDictionary<string, string> explorerSchedule;
@@ -25,19 +25,14 @@ namespace RejuvenatingForest
         public override void Entry(IModHelper helper)
         {
             helper.Events.Input.ButtonPressed += this.OnButtonPressed;
-            explorerDialogue = helper.Content.Load<IDictionary<string, string>>("Assets/Explorer/ExplorerDialogue.json", ContentSource.ModFolder);
+            /*explorerDialogue = helper.Content.Load<IDictionary<string, string>>("Assets/Explorer/ExplorerDialogue.json", ContentSource.ModFolder);
             explorerSchedule = helper.Content.Load<IDictionary<string, string>>("Assets/Explorer/ExplorerSchedule.json", ContentSource.ModFolder);
             explorerSprite = helper.Content.Load<Texture2D>("Assets/Explorer/explorer.png", ContentSource.ModFolder);
-            explorerPortrait = helper.Content.Load<Texture2D>("Assets/Explorer/explorerPortrait.png", ContentSource.ModFolder);
+            explorerPortrait = helper.Content.Load<Texture2D>("Assets/Explorer/explorerPortrait.png", ContentSource.ModFolder);*/
             //CanLoad<T>(explorerDialogue, "Characters/Explorer/assets/ExplorerDialogue");
             //Load<T>(explorerDialogue, "Characters/Explorer/assets/ExplorerDialogue");
         }
-
-        public void OnRenderWorld(object sender, RenderedWorldEventArgs e)
-        {
-            e.SpriteBatch.Draw(explorerSprite, )
-        }
-
+        /*
         public bool CanLoad<T>(IAssetInfo asset)
         {
             if(asset.AssetNameEquals("Assets/Explorer/ExplorerDialogue"))
@@ -98,7 +93,7 @@ namespace RejuvenatingForest
                 data.Add("Explorer", "adult/polite/outgoing/positive/male/not-datable//Town/fall 17//Forest 4 5/Explorer");
             }
         }
-        
+        */
 
         /*********
         ** Private methods

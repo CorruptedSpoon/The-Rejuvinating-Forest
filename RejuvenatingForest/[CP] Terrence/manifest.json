@@ -1,0 +1,11 @@
+﻿{
+  "Name": "Terrence Explorer NPC",
+  "Author": "Nicholas Jones",
+  "Version": "0.0.5",
+  "Description": "Adding Terrence the explorer npc to the game",
+  "UniqueID": "TeamTimber.terrence",
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  },
+  "UpdateKeys": [ "" ]
+}

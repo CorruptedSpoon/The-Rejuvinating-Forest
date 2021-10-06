@@ -57,15 +57,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="manifest.json" />
+    <None Include="[CP] Terrence\assets\ExplorerDialogue.json" />
+    <None Include="[CP] Terrence\assets\ExplorerSchedule.json" />
+    <None Include="[CP] Terrence\manifest.json" />
+    <None Include="[CP] Terrence\content.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Twizard\TwizardDialogue.png" />
-    <Content Include="Assets\Explorer\explorerPortrait.png" />
-    <Content Include="Assets\Explorer\ExplorerDialogue.json" />
-    <Content Include="Assets\Explorer\ExplorerSchedule.json" />
-    <Content Include="Assets\Explorer\explorer.png" />
+    <Content Include="overallAssets\Twizard\TwizardDialogue.png" />
+    <Content Include="[CP] Terrence\assets\explorer.png" />
+    <Content Include="[CP] Terrence\assets\explorerPortrait.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Pathoschild.Stardew.ModBuildConfig.3.3.0\build\Pathoschild.Stardew.ModBuildConfig.targets" Condition="Exists('..\packages\Pathoschild.Stardew.ModBuildConfig.3.3.0\build\Pathoschild.Stardew.ModBuildConfig.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

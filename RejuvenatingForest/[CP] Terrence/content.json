@@ -1,0 +1,32 @@
+{
+  "Format": "1.23.0",
+  "Changes": [
+    {
+      "Action": "Load",
+      "Target": "Characters/Terrence",
+      "FromFile": "assets/explorer.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Portraits/Terrence",
+      "FromFile": "assets/explorerPortrait.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Characters/Dialogue/Terrence",
+      "FromFile": "assets/ExplorerDialogue.json"
+    },
+    {
+      "Action": "Load",
+      "Target": "Characters/schedules/Terrence",
+      "FromFile": "assets/ExplorerSchedule.json"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/NPCDispositions",
+      "Entries": {
+        "Terrence": "adult/polite/outgoing/positive/male/not-datable/null/Town/fall 17//Forest 4 5/Terrence"
+      }
+    }
+  ]
+}
