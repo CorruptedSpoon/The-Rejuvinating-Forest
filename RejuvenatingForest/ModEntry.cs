@@ -18,6 +18,9 @@ namespace RejuvenatingForest
         public override void Entry(IModHelper helper)
         {
             helper.Events.Input.ButtonPressed += this.OnButtonPressed;
+
+            // the game clears locations when loading the save, so load the custom map after the save loads
+            helper.Events.GameLoop.SaveLoaded += this.OnSaveLoaded;
         }
 
 
@@ -35,6 +38,19 @@ namespace RejuvenatingForest
 
             // when you are loaded into the world, pressing buttons logs that button to the console
             this.Monitor.Log($"{Game1.player.Name} pressed {e.Button}.", LogLevel.Debug);
+        }
+
+        /// <summary>Load the Rejuvenating Forest map into the world</summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnSaveLoaded(object sender, SaveLoadedEventArgs args)
+        {
+            // get the internal asset key for the map file
+            string mapAssetKey = this.Helper.Content.GetActualAssetKey("Maps/RejuvenatingForest.tmx", ContentSource.ModFolder);
+
+            // add the location
+            GameLocation location = new GameLocation(mapAssetKey, "RejuvenatingForest") { IsOutdoors = true, IsFarm = false };
+            Game1.locations.Add(location);
         }
     }
 }
