@@ -1,0 +1,11 @@
+﻿{
+  "Name": "Twizard NPC",
+  "Author": "Rhys Stever",
+  "Version": "0.0.5",
+  "Description": "Adding the Twizard npc to the game",
+  "UniqueID": "TeamTimber.twizard",
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  },
+  "UpdateKeys": [ "" ]
+}

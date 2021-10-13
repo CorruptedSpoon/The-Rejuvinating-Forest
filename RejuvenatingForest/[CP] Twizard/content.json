@@ -4,12 +4,12 @@
         {
             "Action": "Load",
             "Target": "Characters/Twizard",
-            "FromFile": "assets/TwizardPlaceholder.png",
+            "FromFile": "assets/TwizardSprites.png",
         },
         {
             "Action": "Load",
             "Target": "Portraits/Twizard",
-            "FromFile": "assets/TwizardDialogue.png",
+            "FromFile": "assets/TwizardPortraits.png",
         },
         {
             "Action": "Load",
