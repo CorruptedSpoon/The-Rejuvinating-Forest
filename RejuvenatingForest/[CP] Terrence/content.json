@@ -25,7 +25,7 @@
       "Action": "EditData",
       "Target": "Data/NPCDispositions",
       "Entries": {
-        "Terrence": "adult/polite/outgoing/positive/male/not-datable/null/Town/fall 17//Forest 4 5/Terrence"
+        "Terrence": "adult/polite/outgoing/positive/male/not-datable/null/Town/fall 17//Forest 4 5 0/Terrence"
       }
     }
   ]
