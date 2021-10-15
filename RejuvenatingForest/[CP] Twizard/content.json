@@ -4,29 +4,29 @@
         {
             "Action": "Load",
             "Target": "Characters/Twizard",
-            "FromFile": "assets/TwizardSprites.png",
+            "FromFile": "assets/TwizardSprites.png"
         },
         {
             "Action": "Load",
             "Target": "Portraits/Twizard",
-            "FromFile": "assets/TwizardPortraits.png",
+            "FromFile": "assets/TwizardPortraits.png"
         },
         {
             "Action": "Load",
             "Target": "Characters/Dialogue/Twizard",
-            "FromFile": "assets/TwizardDialogue.json",
+            "FromFile": "assets/TwizardDialogue.json"
         },
         {
             "Action": "Load",
             "Target": "Characters/schedules/Twizard",
-            "FromFile": "assets/TwizardSchedule.json",
+            "FromFile": "assets/TwizardSchedule.json"
         },
 		{
             "Action": "EditData",
             "Target": "Data/NPCDispositions",
             "Entries": {
-                "Twizard": "adult/rude/neutral/negative/male/not-datable/null/Other/winter 17//WizardHouse 4 17/Twizard"
-            },
-        },
+                "Twizard": "adult/polite/neutral/neutral/male/not-datable/null/Other/winter 17//Forest 4 7/Twizard"
+            }
+        }
     ]
 }
