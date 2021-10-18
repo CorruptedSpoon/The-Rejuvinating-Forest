@@ -57,6 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="manifest.json" />
+    <None Include="Maps\RejuvenatingForestCave.tmx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Maps\RejuvenatingForest.tmx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

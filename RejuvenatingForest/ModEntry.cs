@@ -51,6 +51,13 @@ namespace RejuvenatingForest
             // add the location
             GameLocation location = new GameLocation(mapAssetKey, "RejuvenatingForest") { IsOutdoors = true, IsFarm = false };
             Game1.locations.Add(location);
+
+            // get the internal asset key for the map file
+            string mapAssetKey2 = this.Helper.Content.GetActualAssetKey("Maps/RejuvenatingForestCave.tmx", ContentSource.ModFolder);
+
+            // add the location
+            GameLocation location2 = new GameLocation(mapAssetKey2, "RejuvenatingForestCave") { IsOutdoors = false, IsFarm = false };
+            Game1.locations.Add(location2);
         }
     }
 }
