@@ -62,12 +62,30 @@
     <None Include="[CP] Terrence\manifest.json" />
     <None Include="[CP] Terrence\content.json" />
     <None Include="packages.config" />
+    <None Include="[CP] Twizard\assets\TwizardDialogue.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="[CP] Twizard\assets\TwizardSchedule.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="[CP] Twizard\content.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="[CP] Twizard\manifest.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="[CP] Wizard\content.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="overallAssets\Twizard\TwizardDialogue.png" />
     <Content Include="[CP] Terrence\assets\explorer.png" />
     <Content Include="[CP] Terrence\assets\explorerPortrait.png" />
+    <Content Include="[CP] Twizard\assets\TwizardPortraits.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="[CP] Twizard\assets\TwizardSprites.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

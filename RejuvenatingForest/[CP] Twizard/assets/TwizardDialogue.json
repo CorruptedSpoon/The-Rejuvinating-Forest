@@ -1,15 +1,12 @@
 {
   "Introduction": "Hello @! I am the Wizard's twin brother, Twizard!$1#I have been trying to get back to my home in the Rejuvenating Forest. Maybe you can help me?$0#",
   "winter_17": "$y 'Did you know today was my birthday?_Yes_Thank you for coming to see me on this magical day!_No_No matter, thank you for visiting anyway!'$1#",
-  "WizardHouse": "If you ask me, I think my brother needs to get out more.$0#",
-  "Forest": "Have you met Terrence? He's a wonderful explorer!$0#",
-  "Woods": "I enjoy living in the woods. It's a much quieter and simpler life.$0#",
-  "RejuvenatingForest": "The Heart of the Forest should be located somewhere deep in the forest. Work quickly, the forest is known to regrow faster than usual.$0#",
-  "Mon": "Here's a wizard joke for you:$0#$b#What subject do they teach at wizard school?$0#$b#Spelling!$1#",
-  "Tue": "Here's a wizard joke for you:$0#$b#What do you call a wizard who comes from outer space?$0#$b#A flying sorcerer!$1#",
-  "Wed": "Here's a wizard joke for you:$0#$b#What happened to the evil wizard at school?$0#$b#They were ex-spelled!$1#",
-  "Thu": "Here's a wizard joke for you:$0#$b#Which of the wizard’s friends was good at baseball?$0#$b#The bat!$1#",
-  "Fri": "Here's a wizard joke for you:$0#$b#Why can’t wizards fish?$0#$b#They can only cast spells!$1#",
-  "Sat": "Here's a wizard joke for you:$0#$b#What do you get when you cross a wizard and a dinosaur?$0#$b#Tyrannosaurus hex!$1#",
-  "Sun": "Here's a wizard joke for you:$0#$b#Why do wizards brush their teeth ten times a day?$0#$b#To avoid bat breath!$1#"
+  "RejuvenatingForest": "The Heart of the Forest should be located somewhere deep in the forest. Work quickly, the forest is known to regrow faster than usual.$0#$e#",
+  "Mon": "Here's a wizard joke for you:$0#$b#What subject do they teach at wizard school?$0#$b#Spelling!$1#$e#",
+  "Tue": "Here's a wizard joke for you:$0#$b#What do you call a wizard who comes from outer space?$0#$b#A flying sorcerer!$1#$e#",
+  "Wed": "Here's a wizard joke for you:$0#$b#What happened to the evil wizard at school?$0#$b#They were ex-spelled!$1#$e#",
+  "Thu": "Here's a wizard joke for you:$0#$b#Which of the wizard’s friends was good at baseball?$0#$b#The bat!$1#$e#",
+  "Fri": "Here's a wizard joke for you:$0#$b#Why can’t wizards fish?$0#$b#They can only cast spells!$1#$e#",
+  "Sat": "Here's a wizard joke for you:$0#$b#What do you get when you cross a wizard and a dinosaur?$0#$b#Tyrannosaurus hex!$1#$e#",
+  "Sun": "Here's a wizard joke for you:$0#$b#Why do wizards brush their teeth ten times a day?$0#$b#To avoid bat breath!$1#$e#"
 }
