@@ -25,7 +25,7 @@
             "Action": "EditData",
             "Target": "Data/NPCDispositions",
             "Entries": {
-                "Twizard": "adult/polite/neutral/neutral/male/not-datable/null/Other/winter 17//Forest 4 7/Twizard"
+                "Twizard": "adult/polite/neutral/neutral/male/not-datable/null/Other/winter 17//WizardHouse 2 6/Twizard"
             }
         }
     ]
