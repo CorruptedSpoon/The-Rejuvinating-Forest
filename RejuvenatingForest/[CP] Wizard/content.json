@@ -1,0 +1,31 @@
+{
+  "Format": "1.23.0",
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Character/Dialogue/Wizard",
+      "When": {
+        "ForestQuestStarted": "true"
+      },
+      "Entries": {
+        "Introduction": "Have you seen my brother the Twizard?#$bHe recently visited me, and after returning to the woods where he resides, I have not heard from him.#$eMaybe that explorer who traverses the woods knows of his whereabouts.",
+        "Wed": "I'm happy to have my brother as a guest, but since he hasn't been able to return home I have started to lose my patience.#$rAll these wizard jokes are simply too much for me.",
+        "Fri": "#$q 10 Fri_alt#I wonder... Have you spoken with my brother yet?#$r 10 0 Fri_a1#Yes, he can't get into his house because the forest has become completely overgrown.#$r 11 0 Fri_a2#No, I havent found him.",
+        "Fri_alt": "I wonder what could possibly cause the forest to grow this rampantly!#$rNot only that, but the rapid regrowth truly perplexes me...",
+        "Fri_a1": "I see... a truly intriguing situation, but now I will have to help my brother with this mess.#$rI won't hear the end of his complaining!",
+        "Fri_a2": "Hmm... I guess I'll just have to find him myself.",
+        "Forest": "I believe there is magic at play here. It seems something from within the forest has caused this accelerated regrowth."
+      }
+    }
+    {
+      "Action": "EditData",
+      "Target": "Character/Dialogue/Wizard",
+      "When": {
+        "ForestQuestComplete": "true"
+      },
+      "Entries": {
+        "Introduction": "Ah I see you have cleared the forest of its overgrowth! It seems the heart was creating a magical aura that was accelerating growth. Maybe we could create something of use with it."
+      }
+    }
+  ]
+}

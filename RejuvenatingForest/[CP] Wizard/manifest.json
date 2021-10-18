@@ -1,0 +1,11 @@
+﻿{
+  "Name": "Wizard NPC",
+  "Author": "Van Edelman",
+  "Version": "0.0.1",
+  "Description": "Added complex Wizard dialogue related to the forest quest.",
+  "UniqueID": "TeamTimber.wizard",
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  },
+  "UpdateKeys": [ "" ]
+}

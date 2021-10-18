@@ -62,6 +62,7 @@
     <None Include="[CP] Terrence\manifest.json" />
     <None Include="[CP] Terrence\content.json" />
     <None Include="packages.config" />
+    <None Include="[CP] Wizard\content.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="overallAssets\Twizard\TwizardDialogue.png" />
