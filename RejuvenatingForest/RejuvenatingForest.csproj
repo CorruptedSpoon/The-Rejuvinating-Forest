@@ -75,6 +75,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="[CP] Wizard\content.json" />
+    <None Include="Maps\RejuvenatingForestCave.tmx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Maps\RejuvenatingForest.tmx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="overallAssets\Twizard\TwizardDialogue.png" />
