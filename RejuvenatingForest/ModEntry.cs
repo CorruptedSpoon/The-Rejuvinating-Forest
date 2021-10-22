@@ -7,11 +7,12 @@ using StardewValley;
 using System.Collections.Generic;
 using Microsoft.Xna;
 using Microsoft.Xna.Framework.Graphics;
+using System.Linq;
 
 namespace RejuvenatingForest
 {
     /// <summary>The mod entry point.</summary>
-    public class ModEntry : Mod //, IAssetLoader, IAssetEditor
+    public class ModEntry : Mod//, IAssetLoader, IAssetEditor
     {
         IDictionary<string, string> explorerDialogue;
         IDictionary<string, string> explorerSchedule;
@@ -24,6 +25,8 @@ namespace RejuvenatingForest
         /// <param name="helper">Provides simplified APIs for writing mods.</param>
         public override void Entry(IModHelper helper)
         {
+            helper.Events.GameLoop.DayStarted += this.OnDayStart;
+
             helper.Events.Input.ButtonPressed += this.OnButtonPressed;
 
             // the game clears locations when loading the save, so load the custom map after the save loads
@@ -133,6 +136,24 @@ namespace RejuvenatingForest
             // add the location
             GameLocation location2 = new GameLocation(mapAssetKey2, "RejuvenatingForestCave") { IsOutdoors = false, IsFarm = false };
             Game1.locations.Add(location2);
+        }
+
+        private void OnDayStart(object sender, DayStartedEventArgs e)
+        {
+            // get the internal asset key for the map file
+            string mapAssetKey = this.Helper.Content.GetActualAssetKey("Maps/RejuvenatingForest.tmx", ContentSource.ModFolder);
+
+            // add the location
+            GameLocation location = new GameLocation(mapAssetKey, "RejuvenatingForest") { IsOutdoors = true, IsFarm = false };
+
+            //get a reference to the index of the location, and reset it
+            //GameLocation oldLocation = Game1.locations.Where(LocationListChangedEventArgs => location.name == "RejuvenatingForest").First();
+            //int index = Game1.locations.IndexOf(oldLocation);
+            //this.Monitor.Log(index.ToString());
+            //Game1.locations[index] == location;
+
+            //this was all for nothing all I have to do is this...
+            Game1.locations.Add(location);
         }
     }
 }
