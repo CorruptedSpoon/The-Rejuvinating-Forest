@@ -8,13 +8,14 @@
     "winter": "610 Beach 38 36 2 dick_fish/850 FishShop 5 4 2/1700 Saloon 17 22 2 \"Strings\\schedules\\Willy:winter.000\"/2320 FishShop 5 4 2",
     "Sat": "610 Forest 91 40 2 dick_fish/1400 Town 59 100 2 dick_fish/1900 Saloon 17 22 2 \"Strings\\schedules\\Willy:Sat.000\"/2300 FishShop 5 4 2",
     "Fri": "610 Beach 38 36 2 dick_fish/850 FishShop 5 4 2/1700 Saloon 17 22 2 \"Strings\\schedules\\Willy:Fri.000\"/2320 FishShop 5 4 2",*/
-  "Fri": "1900 Saloon 17 20 0/2300 Forest 4 5 2",
-  "Thu": "1200 Forest 34 98 0/1600 Forest 4 5 2",
+  "Fri": "610 Forest 4 5 2/900 RejuvenatingForest 25 85 2/1900 Saloon 17 20 0/2300 Forest 4 5 2",
+  "Thu": "610 Forest 4 5 2/1200 Forest 34 98 0/1600 Forest 4 5 2",
   "Wed": "610 Forest 4 5 2",
   "Tue": "610 Forest 4 5 2/1000 Forest 34 25 2/1800 Forest 4 5 2",
   "Mon": "610 Forest 4 5 2/900 Forest 8 35 2/1400 Forest 4 5 2",
-  "Sat": "900 BusStop 16 16 3/1630 Forest 4 5 2",
-  "Sun": "610 Beach 24 33 3/1900 Saloon 36 21 1/2300 Forest 4 5 2",
-  "spring": "610 Forest 4 5 2/900 Forest 8 35 2"
+  "Sat": "610 Forest 4 5 2/900 BusStop 16 16 3/1630 Saloon 36 21 1/2300 Forest 4 5 2",
+  "Sun": "610 Forest 4 5 2/620 Beach 24 33 3/1900 Saloon 36 21 1/2300 Forest 4 5 2",
+  "spring": "610 Forest 4 5 2/900 Forest 8 35 2",
+  "rain":  "610 Forest 4 5 2/620 WizardHouse 2 8 3/1250 Rejuvenating Forest 25 85 2/2000 Forest 4 5 2"
 }
      

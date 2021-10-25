@@ -1,15 +1,16 @@
 {
-  "Introduction": "Hi there, I'm the Explorer!$h#$b#I've been making my way through the Rejuvenating Forest ahead, maybe I could help you.",
+  "Introduction": "Hi there @! I'm the Explorer!$h#$b#I've been making my way through the Rejuvenating Forest ahead, maybe I could help you.$h",
+  "fall_17": "It's my birthday today!$1#$b#I don't think many people know though, I haven't gotten many gifts...$s#$b#I am new in town though!",
   "Mon": "It's a good day for adventuring!$h",
   "Tue": "It's fishing day today! Let's see if I can catch anything good in the pond!$h",
   "Wed": "I think I overheard the Twizard earlier.$n#$b#Something about some magical heart at the middle?$n",
   "Thu": "The woods are overgrown within the Rejuvenating Forest, make sure you take your good tools!$n#$b#You can take your tools to the blacksmith and upgrade them with ores you find in the forest!$h",
-  "Forest_Fri": "Hey, what's up farmer guy?^Hey, it's farm girl. $h#$b#It's a good day for exploring, let's get going!",
-  "Saloon_Fri": "I love coming here after a long day of adventuring.$h#$bWhy don't you grab something to eat?",
-  "BusStop_Sat": "$d bus#The bus is helpful to collect some of the items you can't find in the forest.$b#Head to the Desert and see what you can find!|#It's been a while since I've been to the Desert,$s#$b#You can get materials you can't find in the forest there.$k",
-  "Forest_Sat": "The Bus Stop has all sorts of things you can do.$k#$b#I go there all the time!$h",
-  "Forest_Sun": "I'm headed to the beach for some fishing today.$h#$bHopefully I can catch something big!",
-  "Beach_Sun": "I've got my fishing rod and bait, ready to catch something big!$h#So far I've only caught anchovies...$s",
+  "Fri": "Hey, what's up farmer guy?$h#^Hey, it's farm girl.$h#$b#It's a good day for exploring! Lets get going!",
+  "Saloon": "I love coming here after a long day of adventuring.$h#$bWhy don't you grab something to eat?",
+  "BusStop": "$d bus#The bus is helpful to collect some of the items you can't find in the forest.$b#Head to the Desert and see what you can find!|#It's been a while since I've been to the Desert,$s#$b#You can get materials you can't find in the forest there.$k",
+  "Sat": "The Bus Stop has all sorts of things you can do.$0#$b#I go there all the time!$h",
+  "Sun": "I'm headed to the beach for some fishing today.$h#$b#Hopefully I can catch something big, all I've caught so far are anchovies.",
+  "Beach": "I've got my fishing rod and bait, ready to catch something big!$h#So far I've only caught anchovies...$s",
   "Saloon_Sun": "Sunday means Monday is coming, might as well have some fun before Monday.$h"
 
 }
