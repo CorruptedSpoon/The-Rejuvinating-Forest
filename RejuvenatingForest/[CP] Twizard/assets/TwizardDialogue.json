@@ -1,11 +1,66 @@
 {
   "Introduction": "Hello @! I am the Wizard's twin brother, Twizard!$1#I have been trying to get back to my home in the Rejuvenating Forest. Maybe you can help me?$0#",
-  "winter_17": "$y 'Did you know today was my birthday?_Yes_Thank you for coming to see me on this magical day!_No_No matter, thank you for visiting anyway!'$1#",
-  "Mon": "Here's a wizard joke for you:$0#$b#What subject do they teach at wizard school?$0#$b#Spelling!$1#$e#",
-  "Tue": "Here's a wizard joke for you:$0#$b#What do you call a wizard who comes from outer space?$0#$b#A flying sorcerer!$1#$e#",
-  "Wed": "Here's a wizard joke for you:$0#$b#What happened to the evil wizard at school?$0#$b#They were ex-spelled!$1#$e#",
-  "Thu": "Here's a wizard joke for you:$0#$b#Which of the wizard’s friends was good at baseball?$0#$b#The bat!$1#$e#",
-  "Fri": "Here's a wizard joke for you:$0#$b#Why can’t wizards fish?$0#$b#They can only cast spells!$1#$e#",
-  "Sat": "Here's a wizard joke for you:$0#$b#What do you get when you cross a wizard and a dinosaur?$0#$b#Tyrannosaurus hex!$1#$e#",
-  "Sun": "Here's a wizard joke for you:$0#$b#Why do wizards brush their teeth ten times a day?$0#$b#To avoid bat breath!$1#$e#"
+  "winter_17": 
+    "$y 'Did you know today was my birthday?_Yes_Thank you for coming to see me on this magical day!_No_No matter, thank you for visiting anyway!'$1#",
+  "Mon": 
+    "The path to the heart is simple.
+      $0#$b#Once you enter the forest, take a left, and then a right...
+      $0#$b#...then another right, then left at the tree...
+      $0#$b#...then turn at the rock that looks like a tree...
+      $0#$b#...then right, then left...
+      $0#$b#...left, right, right, left...
+      $0#$b#...
+      $0#$b#...is it right or left next? I can't recall...
+      $0#$b#You'll figure it out, I have faith!
+    $1#$e#",
+  "Tue": 
+    "If you find the heart, I can go home!
+      $1#$b#Yes you will get an awesome reward too...
+    $0#$e#",
+  "Wed": 
+    "Marnie is so nice to talk to.
+      $0#$b#She lets me ramble on and on about the heart of the forest.
+      $0#$b#Oh the heart...
+      $0#$b#How magical...
+      $1#$b#How mysterious...
+      $1#$b#...
+      $0#$b#Oh you're still here!
+      $0#$b#Look at that! I'm rambling once more.
+    $1#$e#",
+  "Thu": 
+    "I like to go on walks around the forest.
+      $0#$b#Sometimes I find myself pondering near the lake.
+      $0#$b#The water can sit so still, yet a single pebble can disrupt it all...
+    $0#$e#",
+  "Fri": 
+    "Oh how fun are Fridays!
+      $1#$b#Here's a wizard joke for you:
+      $0#$b#Why can’t wizards fish?
+      $0#$b#They can only cast spells!
+    $1#$e#Here's a wizard joke for you:
+      $0#$b#What subject do they teach at wizard school?
+      $0#$b#Spelling!
+    $1#$e#Here's a wizard joke for you:
+      $0#$b#What do you get when you cross a wizard and a dinosaur?
+      $0#$b#Tyrannosaurus hex!
+    $1#$e#Here's a wizard joke for you:
+      $0#$b#Why do wizards brush their teeth ten times a day?
+      $0#$b#To avoid bat breath!
+    $1#$e#Here's a wizard joke for you:
+      $0#$b#Which of the wizard’s friends was good at baseball?
+      $0#$b#The bat!
+    $1#$e#Here's a wizard joke for you:
+      $0#$b#What happened to the evil wizard at school?
+      $0#$b#They were ex-spelled!
+    $1#$e#Here's a wizard joke for you:
+      $0#$b#What do you call a wizard who comes from outer space?
+      $0#$b#A flying sorcerer!
+    $1#$e#",
+  "Sat": 
+    "I think I heard Terrence say something about the bus stop. 
+      $0#$b#You should head over there to check it out.
+    $0#$e#",
+  "Sun": 
+    "It's the end of the week? Weeks don't exist in the wild.$0#$b# It's quite wild!
+    $1#$e#"
 }
