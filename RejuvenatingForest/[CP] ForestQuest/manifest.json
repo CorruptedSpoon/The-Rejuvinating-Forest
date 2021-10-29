@@ -1,0 +1,11 @@
+{
+  "Name": "Rejuvenating Forest Quest",
+  "Author": "Van Edelman",
+  "Version": "0.0.5",
+  "Description": "The quest to return the heart of the forest to the Wizard",
+  "UniqueID": "TeamTimber.quest",
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  },
+  "UpdateKeys": [ "" ]
+}
