@@ -1,0 +1,13 @@
+{
+  "Name": "Heart of the Forest FTM",
+  "Author": "Suraj Bonthu",
+  "Version": "1.0.0",
+  "Description": "Places heart of the forest item on the map.",
+  "UniqueID": "Suraj.FTMHeart",
+  "MinimumApiVersion": "2.10.0",
+  "UpdateKeys": [],
+  "ContentPackFor": {
+    "UniqueID": "Esca.FarmTypeManager",
+    "MinimumVersion": "1.11.0"
+  }
+}
