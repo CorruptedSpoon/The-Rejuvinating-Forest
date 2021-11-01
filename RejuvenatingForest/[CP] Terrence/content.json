@@ -22,6 +22,11 @@
       "FromFile": "assets/ExplorerSchedule.json"
     },
     {
+      "Action": "Load",
+      "Target": "Strings/schedules/Terrence",
+      "FromFile": "assets/Terrence.json"
+    },
+    {
       "Action": "EditData",
       "Target": "Data/NPCDispositions",
       "Entries": {
