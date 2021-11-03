@@ -5,7 +5,7 @@
       "Action": "EditData",
       "Target": "Character/Dialogue/Wizard",
       "When": {
-        "HasActiveQuest": "1337"
+        "HasFlag": "forest_quest"
       },
       "Entries": {
         "Introduction": "Have you seen my brother the Twizard?#$bHe recently visited me, and after returning to the woods where he resides, I have not heard from him.#$eMaybe that explorer who traverses the woods knows of his whereabouts.",

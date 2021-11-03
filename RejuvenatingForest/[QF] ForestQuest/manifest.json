@@ -5,7 +5,7 @@
   "Description": "The quest to return the heart of the forest to the Wizard",
   "UniqueID": "TeamTimber.quest",
   "ContentPackFor": {
-    "UniqueID": "Pathoschild.ContentPatcher"
+    "UniqueID": "PurrplingCat.QuestFramework"
   },
   "UpdateKeys": [ "" ]
 }

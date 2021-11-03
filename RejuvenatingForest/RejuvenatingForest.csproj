@@ -53,14 +53,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ModEntry.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="manifest.json" />
-    <None Include="[CP] Terrence\assets\ExplorerDialogue.json" />
-    <None Include="[CP] Terrence\assets\ExplorerSchedule.json" />
-    <None Include="[CP] Terrence\manifest.json" />
-    <None Include="[CP] Terrence\content.json" />
+    <None Include="[QF] ForestQuest\quests.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="[QF] ForestQuest\manifest.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="[CP] Terrence\assets\ExplorerDialogue.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="[CP] Terrence\assets\ExplorerSchedule.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="[CP] Terrence\manifest.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="[CP] Terrence\content.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="[CP] Twizard\assets\TwizardDialogue.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -74,22 +90,57 @@
     <None Include="[CP] Twizard\manifest.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="[CP] Wizard\content.json" />
+    <None Include="[CP] Wizard\content.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Maps\RejuvenatingForestCave.tmx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Maps\RejuvenatingForest.tmx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="[CP] Wizard\manifest.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="[FTM] Heart\content.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="[FTM] Heart\data\Twizzler_290015231_SaveData.save">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="[FTM] Heart\manifest.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="[JA] Heart\manifest.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="[JA] Heart\Objects\heart\object.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="overallAssets\Twizard\TwizardDialogue.png" />
-    <Content Include="[CP] Terrence\assets\explorer.png" />
-    <Content Include="[CP] Terrence\assets\explorerPortrait.png" />
+    <Content Include="overallAssets\Twizard\Twizard.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="overallAssets\Twizard\TwizardDialogue.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="[CP] Terrence\assets\explorer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="[CP] Terrence\assets\explorerPortrait.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="[CP] Twizard\assets\TwizardPortraits.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="[CP] Twizard\assets\TwizardSprites.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="[JA] Heart\Objects\heart\-.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="[JA] Heart\Objects\heart\object.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
