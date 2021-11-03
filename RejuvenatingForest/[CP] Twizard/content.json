@@ -21,6 +21,11 @@
             "Target": "Characters/schedules/Twizard",
             "FromFile": "assets/TwizardSchedule.json"
         },
+        {
+          "Action": "Load",
+          "Target": "Strings/schedules/Twizard",
+          "FromFile": "assets/Twizard.json"
+        },
 		{
             "Action": "EditData",
             "Target": "Data/NPCDispositions",

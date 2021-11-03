@@ -1,5 +1,5 @@
 {
-  "rain": "610 WizardHouse 2 6 3/1300 RejuvenatingForest 27 88 2/1800 WizardHouse 2 6 3",
+  "rain": "610 WizardHouse 2 6 3/1300 RejuvenatingForest 27 88 2 \"Strings\\schedules\\Twizard:rain.000\"/1800 WizardHouse 2 6 3",
   "Mon": "610 WizardHouse 2 6 3/630 Forest 38 11 2/1300 RejuvenatingForest 27 88 2/2300 WizardHouse 2 6 3",
   "Tue": "610 WizardHouse 2 6 3/630 Forest 3 35 1/900 Forest 38 11 2/1300 RejuvenatingForest 27 88 2/2300 WizardHouse 2 6 3",
   "Wed": "610 WizardHouse 2 6 3/630 Forest 3 35 1/900 Forest 61 13 2/1300 RejuvenatingForest 27 88 2/2300 WizardHouse 2 6 3",
