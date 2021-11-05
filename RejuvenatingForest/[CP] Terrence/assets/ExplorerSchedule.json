@@ -2,7 +2,7 @@
   "Fri": "610 Forest 4 5 2/900 Forest 4 6 2/1000 Forest 4 6 2 \"Strings\\schedules\\Terrence:Fri.000\"/1900 Saloon 17 20 0 \"Strings\\schedules\\Terrence:saloon.000\"/2300 Forest 4 5 2 \"Strings\\schedules\\Terrence:late.000\"",
   "Thu": "610 Forest 4 5 2/1200 Forest 34 98 0 \"Strings\\schedules\\Terrence:house.000\"/1600 Forest 4 5 2",
   "Wed": "610 Forest 4 5 2",
-  "winter_15": "1600 Saloon 17 20 0 \"Strings\\schedules\\Terrence:saloon.001\"/2420 Forest 4 5 2 \"Strings\\schedules\\Terrence:late.000\"",
+  "winter_15": "1600 Saloon 17 20 0 \"Strings\\schedules\\Terrence:saloon.000\"/2420 Forest 4 5 2 \"Strings\\schedules\\Terrence:late.000\"",
   "fall_Sat": "1400 Town 61 100 2 dick_fish \"Strings\\schedules\\Terrence:fall_Sat.000\"/1900 Saloon 17 20 0 \"Strings\\schedules\\Terrence:saloon.000\"/2320 Forest 4 5 2 \"Strings\\schedules\\Terrence:late.000\"",
   "Tue": "610 Forest 4 5 2/1000 Forest 34 25 2 dick_fish \"Strings\\schedules\\Terrence:dock.000\"/1800 Forest 4 5 2",
   "Mon": "610 Forest 4 5 2/900 Forest 8 35 2 \"Strings\\schedules\\Terrence:wizard.000\"/1400 Forest 4 5 2",
