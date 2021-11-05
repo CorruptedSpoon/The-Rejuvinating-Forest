@@ -1,3 +1,15 @@
 {
-	"rain.000": "I love it when it rains. Nature is washing itself off!$h#$e#",
+	"rain.000": 
+		"I love it when it rains. Nature is washing itself off!
+		$h#$e#",
+	"woods.000": 
+		"The path to the Rejuvenating Forest is this way!
+			$0#$b#Enter the Secret Woods, the entrance to the Rejuvenating Forest should be to the west. 
+		$0#$e#",
+	"rejuvenatingforest.000": 
+		"Welcome to the Rejuvenating Forest!
+			$0#$b#As you can see it is quite overrun.
+			$0#$b#Travel deep into the forest to find the heart.
+			$0#$b#Once you find the heart, return it to my brother.
+		$h#$e#"
 }
