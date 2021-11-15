@@ -16,7 +16,7 @@ using xTile.ObjectModel;
 namespace RejuvenatingForest
 {
     /// <summary>The mod entry point.</summary>
-    public class ModEntry : Mod, IAssetEditor //, IAssetLoader, 
+    public class ModEntry : Mod, IAssetEditor, IAssetLoader
     {
         IDictionary<string, string> explorerDialogue;
         IDictionary<string, string> explorerSchedule;
@@ -25,6 +25,15 @@ namespace RejuvenatingForest
         /*********
         ** Public methods
         *********/
+
+        public bool CanLoad<T>(IAssetInfo asset)
+        {
+            return asset.AssetNameEquals("Maps/RejuvenatingForest");
+        }
+        public T Load<T>(IAssetInfo asset)
+        {
+            return this.Helper.Content.Load<T>("Maps/RejuvenatingForest.tmx", ContentSource.ModFolder);
+        }
 
         public bool CanEdit<T>(IAssetInfo asset)
         {
@@ -125,6 +134,9 @@ namespace RejuvenatingForest
             forest.updateWarps();
             rejuv.updateWarps();
             beach.updateWarps();*/
+            GameLocation rejuv = Game1.getLocationFromName("RejuvenatingForest");
+            rejuv.map.Properties["Warp"] += " 96 32 Forest 3 5";
+            rejuv.updateWarps();
             NPC.populateRoutesFromLocationToLocationList();
             
             
@@ -140,6 +152,7 @@ namespace RejuvenatingForest
 
         private void OnDayStart(object sender, DayStartedEventArgs e)
         {
+            /*
             // get the internal asset key for the map file
             string mapAssetKey = this.Helper.Content.GetActualAssetKey("Maps/RejuvenatingForest.tmx", ContentSource.ModFolder);
 
@@ -162,6 +175,7 @@ namespace RejuvenatingForest
                     this.Monitor.Log(j.Key, LogLevel.Debug);
                 }
             }
+            */
         }
     }
 }
