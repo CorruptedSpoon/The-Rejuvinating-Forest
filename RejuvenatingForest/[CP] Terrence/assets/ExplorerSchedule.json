@@ -1,5 +1,5 @@
-{
-  "Fri": "610 RejuvenatingForest 91 31 2/900 Forest 4 5 2/1000 Forest 4 6 2 \"Strings\\schedules\\Terrence:Fri.000\"/1900 Saloon 17 20 0 \"Strings\\schedules\\Terrence:saloon.000\"/2300 Forest 4 5 2 \"Strings\\schedules\\Terrence:late.000\"",
+{/*
+  "Fri": "610 Beach 28 15 2/900 Forest 4 5 2/1000 Forest 4 6 2 \"Strings\\schedules\\Terrence:Fri.000\"/1900 Saloon 17 20 0 \"Strings\\schedules\\Terrence:saloon.000\"/2300 Forest 4 5 2 \"Strings\\schedules\\Terrence:late.000\"",
   "Thu": "610 Forest 4 5 2/1200 Forest 34 98 0 \"Strings\\schedules\\Terrence:house.000\"/1600 Forest 4 5 2",
   "Wed": "610 Forest 4 5 2",
   "winter_15": "1600 Saloon 17 20 0 \"Strings\\schedules\\Terrence:saloon.000\"/2420 Forest 4 5 2 \"Strings\\schedules\\Terrence:late.000\"",
@@ -8,6 +8,7 @@
   "Mon": "610 Forest 4 5 2/900 Forest 8 35 2 \"Strings\\schedules\\Terrence:wizard.000\"/1400 Forest 4 5 2",
   "Sat": "610 Forest 4 5 2/900 BusStop 16 16 3 \"Strings\\schedules\\Terrence:bus.000\"/1630 Saloon 36 21 1 \"Strings\\schedules\\Terrence:saloon.001\"/2300 Forest 4 5 2",
   "Sun": "610 Forest 4 5 2/620 Beach 25 36 3 dick_fish \"Strings\\schedules\\Terrence:beach.000\"/1900 Saloon 36 21 1 \"Strings\\schedules\\Terrence:saloon.001\"/2300 Forest 4 5 2 \"Strings\\schedules\\Terrence:late.000\"",
-  "spring": "610 Forest 4 5 2/900 Forest 8 35 2",
-  "rain": "610 Forest 4 5 2/620 WizardHouse 10 23 0 \"Strings\\schedules\\Terrence:rain.000\"/1250 Forest 4 6 2/2000 Forest 4 5 2 \"Strings\\schedules\\Terrence:late.000\""
+  "rain": "610 Forest 4 5 2/620 WizardHouse 10 23 0 \"Strings\\schedules\\Terrence:rain.000\"/1250 Forest 4 6 2/2000 Forest 4 5 2 \"Strings\\schedules\\Terrence:late.000\"",
+  */
+  "spring": "610 Beach 30 15 2/900 Forest 8 35 2"
 }     
