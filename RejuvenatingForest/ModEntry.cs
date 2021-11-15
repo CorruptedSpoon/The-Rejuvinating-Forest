@@ -123,6 +123,14 @@ namespace RejuvenatingForest
 
             //this was all for nothing all I have to do is this...
             Game1.locations.Add(location);
+
+            foreach(SerializableDictionary<string, int> i in Game1.player.activeDialogueEvents)
+            {
+                foreach(KeyValuePair<string, int> j in i)
+                {
+                    this.Monitor.Log(j.Key, LogLevel.Debug);
+                }
+            }
         }
     }
 }
