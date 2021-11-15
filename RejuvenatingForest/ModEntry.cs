@@ -9,6 +9,9 @@ using Microsoft.Xna;
 using Microsoft.Xna.Framework.Graphics;
 using System.Linq;
 
+// HARMONY
+using HarmonyLib;
+
 namespace RejuvenatingForest
 {
     /// <summary>The mod entry point.</summary>
@@ -38,6 +41,9 @@ namespace RejuvenatingForest
             explorerPortrait = helper.Content.Load<Texture2D>("Assets/Explorer/explorerPortrait.png", ContentSource.ModFolder);*/
             //CanLoad<T>(explorerDialogue, "Characters/Explorer/assets/ExplorerDialogue");
             //Load<T>(explorerDialogue, "Characters/Explorer/assets/ExplorerDialogue");
+
+            // Uses harmony to patch all OriginalClassName_Patch.cs classes
+            HarmonyPatcher.ApplyPatches(Monitor);
         }
         /*
         public bool CanLoad<T>(IAssetInfo asset)
