@@ -17,9 +17,9 @@ namespace RejuvenatingForest
         private static void GameLocation_GetLocationContext_Patch()
         {
             HarmonyPatcher.ApplyPatch(
-                caller: typeof(HarmonyPatches).GetMethod("GameLocation_GetLocationContext_Patch"),
+                caller: typeof(GameLocation_Patch).GetMethod("GameLocation_GetLocationContext_Patch"),
                 original: typeof(GameLocation).GetMethod("GetLocationContext"),
-                prefix: new HarmonyMethod(typeof(HarmonyPatches).GetMethod("GameLocation_GetLocationContext_Prefix"))
+                prefix: new HarmonyMethod(typeof(GameLocation_Patch).GetMethod("GameLocation_GetLocationContext_Prefix"))
             );
         }
 

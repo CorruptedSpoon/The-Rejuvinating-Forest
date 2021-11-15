@@ -12,7 +12,7 @@ namespace RejuvenatingForest
 		// NOTE: All Monitor code is experimental and may not be correct
 
 		private static Harmony harmony;
-		private static IMonitor Monitor; // ref to ModEntry.cs monitor
+		public static IMonitor Monitor; // ref to ModEntry.cs monitor
 		
 		static HarmonyPatcher()
 		{
@@ -23,14 +23,20 @@ namespace RejuvenatingForest
 		{
 			Monitor = monitor;
 
-			MethodInfo[] patchMethods = 
-				typeof(HarmonyPatcher)
-					.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
-					.Where(m => m.Name.Contains("_Patch")).ToArray();
+			//MethodInfo[] patchMethods = 
+			//	typeof(HarmonyPatcher)
+			//		.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+			//		.Where(m => m.Name.Contains("_Patch")).ToArray();
+			MethodInfo[] patchMethods =
+				typeof(GameLocation_Patch)
+					.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
+			    // TODO: Add .Where(...) filter
 
 			foreach (MethodInfo patchMethod in patchMethods)
 			{
-				patchMethod.Invoke(null, null);
+				// Workaround for previous TODO
+				if(patchMethod.Name.Contains("_Patch"))
+					patchMethod.Invoke(null, null);
 			}
 		}
 
