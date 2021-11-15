@@ -8,6 +8,10 @@ using System.Collections.Generic;
 using Microsoft.Xna;
 using Microsoft.Xna.Framework.Graphics;
 using System.Linq;
+using xTile.Layers;
+using xTile.Tiles;
+using xTile;
+using xTile.ObjectModel;
 
 namespace RejuvenatingForest
 {
@@ -32,75 +36,7 @@ namespace RejuvenatingForest
             // the game clears locations when loading the save, so load the custom map after the save loads
             helper.Events.GameLoop.SaveLoaded += this.OnSaveLoaded;
 
-            /*explorerDialogue = helper.Content.Load<IDictionary<string, string>>("Assets/Explorer/ExplorerDialogue.json", ContentSource.ModFolder);
-            explorerSchedule = helper.Content.Load<IDictionary<string, string>>("Assets/Explorer/ExplorerSchedule.json", ContentSource.ModFolder);
-            explorerSprite = helper.Content.Load<Texture2D>("Assets/Explorer/explorer.png", ContentSource.ModFolder);
-            explorerPortrait = helper.Content.Load<Texture2D>("Assets/Explorer/explorerPortrait.png", ContentSource.ModFolder);*/
-            //CanLoad<T>(explorerDialogue, "Characters/Explorer/assets/ExplorerDialogue");
-            //Load<T>(explorerDialogue, "Characters/Explorer/assets/ExplorerDialogue");
         }
-        /*
-        public bool CanLoad<T>(IAssetInfo asset)
-        {
-            if(asset.AssetNameEquals("Assets/Explorer/ExplorerDialogue"))
-            {
-                return true;
-            }
-            if(asset.AssetNameEquals("Assets/Explorer/ExplorerSchedule"))
-            {
-                return true;
-            }
-            if (asset.AssetNameEquals("Assets/Explorer/explorer"))
-            {
-                return true;
-            }
-            if (asset.AssetNameEquals("Assets/Explorer/explorerPortrait"))
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public T Load<T>(IAssetInfo asset)
-        {
-            if(asset.AssetNameEquals("Assets/Explorer/ExplorerDialogue"))
-            {
-                return (T)explorerDialogue;
-            }
-            if(asset.AssetNameEquals("Assets/Explorer/ExplorerSchedule"))
-            {
-                return (T)explorerSchedule;
-            }
-            if (asset.AssetNameEquals("Assets/Explorer/explorer"))
-            {
-                return (T)(object)explorerSprite;
-            }
-            if (asset.AssetNameEquals("Assets/Explorer/explorerPortrait"))
-            {
-                return (T)(object)explorerPortrait;
-            }
-            return default(T);
-        }
-
-        public bool CanEdit<T>(IAssetInfo asset)
-        {
-            if (asset.AssetNameEquals("Data/NPCDispositions"))
-            {
-                return true;
-            }
-            return false;
-        }
-
-        
-        public void Edit<T>(IAssetData asset)
-        {
-            if (asset.AssetNameEquals("Data/NPCDispositions"))
-            {
-                IDictionary<string, string> data = asset.AsDictionary<string, string>().Data;
-                data.Add("Explorer", "adult/polite/outgoing/positive/male/not-datable//Town/fall 17//Forest 4 5/Explorer");
-            }
-        }
-        */
 
         /*********
         ** Private methods
@@ -136,6 +72,39 @@ namespace RejuvenatingForest
             // add the location
             GameLocation location2 = new GameLocation(mapAssetKey2, "RejuvenatingForestCave") { IsOutdoors = false, IsFarm = false };
             Game1.locations.Add(location2);
+
+            xTile.Map busStop = Game1.getLocationFromName("BusStop").Map;
+
+
+            //xTile.Map forest = Game1.getLocationFromName("Forest").Map;
+            //forest.Properties.TryGetValue("Warp", out xTile.ObjectModel.PropertyValue initialWarps);
+            //forest.Properties.Remove("Warp");
+            //forest.Properties.Add("Warp", initialWarps + " 6 7 Beach 31 15");
+            ////forest.Properties.Add("Warp", "6 7 Beach 31 15");
+
+
+            //xTile.Map RejuvForest = Game1.getLocationFromName("Beach").Map;
+            //RejuvForest.Properties.TryGetValue("Warp", out xTile.ObjectModel.PropertyValue rejuvWarps);
+            //RejuvForest.Properties.Remove("Warp");
+            //RejuvForest.Properties.Add("Warp", rejuvWarps + " 30 15 Forest 5 7");
+            //RejuvForest.Properties.Add("Warp", "30 15 Forest 5 7");
+            GameLocation forest = Game1.getLocationFromName("Forest");
+            GameLocation beach = Game1.getLocationFromName("RejuvenatingForest");
+            GameLocation bus = Game1.getLocationFromName("BusStop");
+
+            forest.map.Properties["Warp"] += " 3 3 RejuvenatingForest 92 31";
+            beach.map.Properties["Warp"] += " 93 31 Forest 3 5";
+
+            forest.updateWarps();
+            beach.updateWarps();
+            //GameLocation
+            //forest.setTileProperty(6, 7, "Building", "Warp", "6 7 Beach 31 15");
+            //beach.setTileProperty(28, 15, "Building", "Warp", "28 15 Forest 5 7");
+
+            //GameLocation forest = Game1.getLocationFromName("Forest");
+            //Layer forestLayer = forest.map.GetLayer("Back");
+            //Tile warpTile = forestLayer.Tiles[6, 7];
+            //warpTile.Properties["@NPCWarp"] = "6 7 Town 32 64";
         }
 
         private void OnDayStart(object sender, DayStartedEventArgs e)
