@@ -26,6 +26,8 @@ namespace RejuvenatingForest
         public static bool GameLocation_GetLocationContext_Prefix(GameLocation __instance, GameLocation.LocationContext __result)
         {
             // do patchy stuff
+            Game1.player.CombatLevel = 10;
+
             return true; // Temporary result to avoid throwing an error
         }
     }
