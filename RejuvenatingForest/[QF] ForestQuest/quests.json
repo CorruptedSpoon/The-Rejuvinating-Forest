@@ -13,10 +13,12 @@
       "Cancelable": false,
       "Trigger": "Wizard 3000 WizardHouse 0 10",
       "ReactionText": "Ah I see you have cleared the forest of its overgrowth! It seems the heart was the culprit. Maybe we could create something of use with it.",
-      "Conversation Topic": {
+      "ConversationTopic": {
         "AddWhenQuestAccepted": "forest_quest 20",
-        "RemoveWhenQuestCompleted": "forest_quest"
-      }
+        "RemoveWhenQuestCompleted": "forest_quest",
+        "AddWhenQuestCompleted": "forest_quest_complete 5"
+      },
+      "AddMailOnComplete": "Custon_TTimber_ForestQuest_complete"
     }
   ],
   "Offers": [
