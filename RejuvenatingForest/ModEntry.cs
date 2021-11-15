@@ -21,9 +21,8 @@ namespace RejuvenatingForest
         IDictionary<string, string> explorerSchedule;
         Texture2D explorerSprite;
         Texture2D explorerPortrait;
-        /*********
-        ** Public methods
-        *********/
+
+        #region Entry method
         /// <summary>The mod entry point, called after the mod is first loaded.</summary>
         /// <param name="helper">Provides simplified APIs for writing mods.</param>
         public override void Entry(IModHelper helper)
@@ -45,6 +44,9 @@ namespace RejuvenatingForest
             // Uses harmony to patch all OriginalClassName_Patch.cs classes
             HarmonyPatcher.ApplyPatches(Monitor);
         }
+        #endregion
+
+        #region Public Methods
         /*
         public bool CanLoad<T>(IAssetInfo asset)
         {
@@ -107,10 +109,9 @@ namespace RejuvenatingForest
             }
         }
         */
+        #endregion
 
-        /*********
-        ** Private methods
-        *********/
+        #region Private Methods
         /// <summary>Raised after the player presses a button on the keyboard, controller, or mouse.</summary>
         /// <param name="sender">The event sender.</param>
         /// <param name="e">The event data.</param>
@@ -169,5 +170,6 @@ namespace RejuvenatingForest
                 }
             }
         }
+        #endregion
     }
 }
