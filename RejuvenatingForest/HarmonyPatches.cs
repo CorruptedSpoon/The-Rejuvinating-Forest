@@ -10,7 +10,7 @@ using HarmonyLib;
 
 namespace RejuvenatingForest
 {
-    class HarmonyPatches
+    internal abstract class HarmonyPatches
     {
         // Used by HarmonyPatcher.cs to identify all classes that patch existing code
         // Prerequisite: Class names must contain "_Patch"

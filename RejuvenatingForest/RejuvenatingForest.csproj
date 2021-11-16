@@ -16,7 +16,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <LangVersion>9.0</LangVersion>
-	<EnableHarmony>true</EnableHarmony>
+    <EnableHarmony>true</EnableHarmony>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -58,8 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameLocation_Patch.cs" />
+    <Compile Include="Globals.cs" />
     <Compile Include="HarmonyPatcher.cs" />
     <Compile Include="HarmonyPatches.cs" />
+    <Compile Include="HoeDirt_Patch.cs" />
     <Compile Include="ModEntry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

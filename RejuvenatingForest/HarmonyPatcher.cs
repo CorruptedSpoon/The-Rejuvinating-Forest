@@ -4,6 +4,8 @@ using System;
 using System.Reflection;
 
 using StardewValley;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace RejuvenatingForest
 {
@@ -16,27 +18,39 @@ namespace RejuvenatingForest
 		
 		static HarmonyPatcher()
 		{
-			harmony = new("manifest.json");
+			harmony = new(Globals.Manifest.UniqueID);
 		}
 
-		internal static void ApplyPatches(IMonitor monitor)
+		internal static void ApplyPatches()
 		{
-			Monitor = monitor;
+			Globals.Monitor.Log("Applying patches...", LogLevel.Debug);
 
-			//MethodInfo[] patchMethods = 
-			//	typeof(HarmonyPatcher)
-			//		.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
-			//		.Where(m => m.Name.Contains("_Patch")).ToArray();
-			MethodInfo[] patchMethods =
-				typeof(GameLocation_Patch)
-					.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
-			    // TODO: Add .Where(...) filter
+			// Get all HarmonyPatches child classes
+			List<Type> patchClasses = new List<Type>();
+			foreach (Type type in
+				Assembly.GetAssembly(typeof(HarmonyPatches)).GetTypes()
+				.Where(myType => myType.IsClass && !myType.IsAbstract && myType.IsSubclassOf(typeof(HarmonyPatches))))
+			{
+				patchClasses.Add(type);
+			}
+
+			// For each class, add the methods to a list
+			MethodInfo[] patchMethods = new MethodInfo[0];
+			foreach(Type patchClass in patchClasses)
+            {
+				// Get a reference to all _Patch methods in the class
+				MethodInfo[] patchMethodsInClass =
+				patchClass
+				    .GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+					.Where(m => m.Name.Contains("_Patch")).ToArray();
+
+				// Append the methods to the current list of methods
+				patchMethods = patchMethods.Concat<MethodInfo>(patchMethodsInClass).ToArray<MethodInfo>();
+			}
 
 			foreach (MethodInfo patchMethod in patchMethods)
 			{
-				// Workaround for previous TODO
-				if(patchMethod.Name.Contains("_Patch"))
-					patchMethod.Invoke(null, null);
+				patchMethod.Invoke(null, null);
 			}
 		}
 
@@ -44,12 +58,12 @@ namespace RejuvenatingForest
 		{
 			if (original is null)
 			{
-				Monitor.Log($"Aborting {caller.Name}: Method to patch cannot be null.", LogLevel.Error);
+				Globals.Monitor.Log($"Aborting {caller.Name}: Method to patch cannot be null.", LogLevel.Error);
 			}
 
 			if (prefix is null && postfix is null && transpiler is null)
 			{
-				Monitor.Log($"Aborting {caller.Name}: At least one valid patch method must be specified.", LogLevel.Error);
+				Globals.Monitor.Log($"Aborting {caller.Name}: At least one valid patch method must be specified.", LogLevel.Error);
 			}
 
 			try
@@ -61,12 +75,12 @@ namespace RejuvenatingForest
 					transpiler: transpiler
 				);
 
-				Monitor.Log($"Successfully patched {original.DeclaringType}::{original.Name}.");
+				Globals.Monitor.Log($"Successfully patched {original.DeclaringType}::{original.Name}.");
 			}
 			catch (Exception ex)
 			{
-				Monitor.Log($"Exception encountered while patching {original.DeclaringType}::{original.Name}: {ex}", LogLevel.Error);
-				Monitor.Log($"Aborting {caller.Name}.", LogLevel.Error);
+				Globals.Monitor.Log($"Exception encountered while patching {original.DeclaringType}::{original.Name}: {ex}", LogLevel.Error);
+				Globals.Monitor.Log($"Aborting {caller.Name}.", LogLevel.Error);
 			}
 		}
 	}

@@ -27,6 +27,10 @@ namespace RejuvenatingForest
         /// <param name="helper">Provides simplified APIs for writing mods.</param>
         public override void Entry(IModHelper helper)
         {
+            Globals.Helper = this.Helper; // Helper can be referenced by Globals.Helper
+            Globals.Monitor = this.Monitor; // Monitor can be referenced by Globals.Logger.Log(...)
+            Globals.Manifest = this.ModManifest; // Manifest can be referenced by Globals.Manifest
+
             helper.Events.GameLoop.DayStarted += this.OnDayStart;
 
             helper.Events.Input.ButtonPressed += this.OnButtonPressed;
@@ -42,7 +46,7 @@ namespace RejuvenatingForest
             //Load<T>(explorerDialogue, "Characters/Explorer/assets/ExplorerDialogue");
 
             // Uses harmony to patch all OriginalClassName_Patch.cs classes
-            HarmonyPatcher.ApplyPatches(Monitor);
+            HarmonyPatcher.ApplyPatches();
         }
         #endregion
 
