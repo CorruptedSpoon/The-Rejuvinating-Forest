@@ -21,7 +21,7 @@
       "Action": "EditData",
       "Target": "Characters/Dialogue/Wizard",
       "When": {
-        "HasConversationTopic": "forest_quest_complete"
+        "HasConversationTopic |contains=forest_quest_complete": "true"
       },
       "entries": {
         "Introduction": "Ah I see you have cleared the forest of its overgrowth! It seems the heart was creating a magical aura that was accelerating growth. Maybe we could create something of use with it."
