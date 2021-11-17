@@ -1,0 +1,9 @@
+﻿{
+  "Name": "Custom Fertilizer",
+  "Author": "Suraj Bonthu",
+  "Version": "1.0.0",
+  "Description": "Custom Fertilizer Asset for IGME 590 Mod.",
+  "UniqueID": "Suraj.Reward",
+  "UpdateKeys": [],
+  "ContentPackFor": { "UniqueID": "spacechase0.JsonAssets" },
+}
