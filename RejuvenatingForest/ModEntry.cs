@@ -19,7 +19,7 @@ using HarmonyLib;
 namespace RejuvenatingForest
 {
     /// <summary>The mod entry point.</summary>
-    public class ModEntry : Mod, IAssetEditor, IAssetLoader
+    public class ModEntry : Mod//, IAssetEditor, IAssetLoader // sorry for the merge conflict nick :c
     {
         IDictionary<string, string> explorerDialogue;
         IDictionary<string, string> explorerSchedule;
