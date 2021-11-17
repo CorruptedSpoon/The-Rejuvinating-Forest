@@ -13,15 +13,49 @@ using xTile.Tiles;
 using xTile;
 using xTile.ObjectModel;
 
+// HARMONY
+using HarmonyLib;
+
 namespace RejuvenatingForest
 {
     /// <summary>The mod entry point.</summary>
     public class ModEntry : Mod, IAssetEditor, IAssetLoader
     {
-        /*********
-        ** Public methods
-        *********/
+        IDictionary<string, string> explorerDialogue;
+        IDictionary<string, string> explorerSchedule;
+        Texture2D explorerSprite;
+        Texture2D explorerPortrait;
 
+        #region Entry method
+        /// <summary>The mod entry point, called after the mod is first loaded.</summary>
+        /// <param name="helper">Provides simplified APIs for writing mods.</param>
+        public override void Entry(IModHelper helper)
+        {
+            Globals.Helper = this.Helper; // Helper can be referenced by Globals.Helper
+            Globals.Monitor = this.Monitor; // Monitor can be referenced by Globals.Logger.Log(...)
+            Globals.Manifest = this.ModManifest; // Manifest can be referenced by Globals.Manifest
+
+            helper.Events.GameLoop.DayStarted += this.OnDayStart;
+
+            helper.Events.Input.ButtonPressed += this.OnButtonPressed;
+
+            // the game clears locations when loading the save, so load the custom map after the save loads
+            helper.Events.GameLoop.SaveLoaded += this.OnSaveLoaded;
+
+            /*explorerDialogue = helper.Content.Load<IDictionary<string, string>>("Assets/Explorer/ExplorerDialogue.json", ContentSource.ModFolder);
+            explorerSchedule = helper.Content.Load<IDictionary<string, string>>("Assets/Explorer/ExplorerSchedule.json", ContentSource.ModFolder);
+            explorerSprite = helper.Content.Load<Texture2D>("Assets/Explorer/explorer.png", ContentSource.ModFolder);
+            explorerPortrait = helper.Content.Load<Texture2D>("Assets/Explorer/explorerPortrait.png", ContentSource.ModFolder);*/
+            //CanLoad<T>(explorerDialogue, "Characters/Explorer/assets/ExplorerDialogue");
+            //Load<T>(explorerDialogue, "Characters/Explorer/assets/ExplorerDialogue");
+
+            // Uses harmony to patch all OriginalClassName_Patch.cs classes
+            HarmonyPatcher.ApplyPatches();
+        }
+        #endregion
+
+        #region Public Methods
+        /*
         public bool CanLoad<T>(IAssetInfo asset)
         {
             return asset.AssetNameEquals("Maps/RejuvenatingForest");
@@ -53,23 +87,10 @@ namespace RejuvenatingForest
                 asset.AsMap().Data.Properties["Warp"] = $"18 30 Forest 5 5 {warps}";
             }
         }
+        */
+        #endregion
 
-        /// <summary>The mod entry point, called after the mod is first loaded.</summary>
-        /// <param name="helper">Provides simplified APIs for writing mods.</param>
-        public override void Entry(IModHelper helper)
-        {
-            helper.Events.GameLoop.DayStarted += this.OnDayStart;
-
-            helper.Events.Input.ButtonPressed += this.OnButtonPressed;
-
-            // the game clears locations when loading the save, so load the custom map after the save loads
-            helper.Events.GameLoop.SaveLoaded += this.OnSaveLoaded;
-
-        }
-
-        /*********
-        ** Private methods
-        *********/
+        #region Private Methods
         /// <summary>Raised after the player presses a button on the keyboard, controller, or mouse.</summary>
         /// <param name="sender">The event sender.</param>
         /// <param name="e">The event data.</param>
@@ -135,5 +156,6 @@ namespace RejuvenatingForest
             }
             */
         }
+        #endregion
     }
 }
