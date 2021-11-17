@@ -24,10 +24,18 @@ namespace RejuvenatingForest
             );
         }
 
-        public static void plant_Prefix(HoeDirt __instance, int __index, int __tileX, int __tileY, Farmer __who, bool __isFertilizer, GameLocation __location, bool __result)
+        public static void plant_Prefix(HoeDirt __instance, int index, int tileX, int tileY, Farmer who, bool isFertilizer, GameLocation location)
         {
+            Globals.Monitor.Log("Applying plant prefix", LogLevel.Debug);
+
             // do patchy stuff
-            __instance.crop.growCompletely();
+
+            // TODO: Implement Magic Fertilizer as an overnight fertilizer
+            // Quality retaining soil only
+            if (index == 371)
+            {
+                __instance.crop.growCompletely();
+            }
         }
     }
 }
