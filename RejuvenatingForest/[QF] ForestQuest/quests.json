@@ -30,7 +30,8 @@
         "Text": "Hello @,^Since visiting my brother the Wizard, I have been unable to return home due to a massive overgrowth in the Rejuvenating Forest. It seems that some sort of magical force, eminating from within the forest is causing rapid regeneration of the vegetation overnight, and my home has been overtaken. Please find the source of this problem!^     -The Twizard "
       },
       "When": {
-        "DaysOfWeek": "Monday Tuesday Wednesday Thursday Friday Saturday Sunday"
+        "DaysOfWeek": "Monday Tuesday Wednesday Thursday Friday Saturday Sunday",
+        "not:MailReceived": "Custon_TTimber_ForestQuest_complete"
       }
     }
   ]
