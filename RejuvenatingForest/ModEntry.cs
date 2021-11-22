@@ -19,13 +19,8 @@ using HarmonyLib;
 namespace RejuvenatingForest
 {
     /// <summary>The mod entry point.</summary>
-    public class ModEntry : Mod//, IAssetEditor, IAssetLoader // sorry for the merge conflict nick :c
+    public class ModEntry : Mod//, IAssetEditor, //IAssetLoader // sorry for the merge conflict nick :c
     {
-        IDictionary<string, string> explorerDialogue;
-        IDictionary<string, string> explorerSchedule;
-        Texture2D explorerSprite;
-        Texture2D explorerPortrait;
-
         #region Entry method
         /// <summary>The mod entry point, called after the mod is first loaded.</summary>
         /// <param name="helper">Provides simplified APIs for writing mods.</param>
@@ -42,52 +37,12 @@ namespace RejuvenatingForest
             // the game clears locations when loading the save, so load the custom map after the save loads
             helper.Events.GameLoop.SaveLoaded += this.OnSaveLoaded;
 
-            /*explorerDialogue = helper.Content.Load<IDictionary<string, string>>("Assets/Explorer/ExplorerDialogue.json", ContentSource.ModFolder);
-            explorerSchedule = helper.Content.Load<IDictionary<string, string>>("Assets/Explorer/ExplorerSchedule.json", ContentSource.ModFolder);
-            explorerSprite = helper.Content.Load<Texture2D>("Assets/Explorer/explorer.png", ContentSource.ModFolder);
-            explorerPortrait = helper.Content.Load<Texture2D>("Assets/Explorer/explorerPortrait.png", ContentSource.ModFolder);*/
-            //CanLoad<T>(explorerDialogue, "Characters/Explorer/assets/ExplorerDialogue");
-            //Load<T>(explorerDialogue, "Characters/Explorer/assets/ExplorerDialogue");
-
             // Uses harmony to patch all OriginalClassName_Patch.cs classes
             HarmonyPatcher.ApplyPatches();
         }
         #endregion
 
         #region Public Methods
-        /*
-        public bool CanLoad<T>(IAssetInfo asset)
-        {
-            return asset.AssetNameEquals("Maps/RejuvenatingForest");
-        }
-        public T Load<T>(IAssetInfo asset)
-        {
-            return this.Helper.Content.Load<T>("Maps/RejuvenatingForest.tmx", ContentSource.ModFolder);
-        }
-
-        public bool CanEdit<T>(IAssetInfo asset)
-        {
-            if (asset.AssetNameEquals("Maps/Forest"))
-                return true;
-            if (asset.AssetNameEquals("Maps/Town"))
-                return true;
-            return false;
-        }
-        public void Edit<T>(IAssetData asset)
-        {
-            if (asset.AssetNameEquals("Maps/Forest"))
-            {
-                string warps = asset.AsMap().Data.Properties["Warp"];
-                asset.AsMap().Data.Properties["Warp"] = $"4 4 Town 16 30 {warps}";
-                asset.AsMap().Data.Properties["Warp"] += " 3 4 RejuvenatingForest 94 31";
-            }
-            if (asset.AssetNameEquals("Maps/Town"))
-            {
-                string warps = asset.AsMap().Data.Properties["Warp"];
-                asset.AsMap().Data.Properties["Warp"] = $"18 30 Forest 5 5 {warps}";
-            }
-        }
-        */
         #endregion
 
         #region Private Methods
@@ -131,30 +86,6 @@ namespace RejuvenatingForest
 
         private void OnDayStart(object sender, DayStartedEventArgs e)
         {
-            /*
-            // get the internal asset key for the map file
-            string mapAssetKey = this.Helper.Content.GetActualAssetKey("Maps/RejuvenatingForest.tmx", ContentSource.ModFolder);
-
-            // add the location
-            GameLocation location = new GameLocation(mapAssetKey, "RejuvenatingForest") { IsOutdoors = true, IsFarm = false };
-
-            //get a reference to the index of the location, and reset it
-            //GameLocation oldLocation = Game1.locations.Where(LocationListChangedEventArgs => location.name == "RejuvenatingForest").First();
-            //int index = Game1.locations.IndexOf(oldLocation);
-            //this.Monitor.Log(index.ToString());
-            //Game1.locations[index] == location;
-
-            //this was all for nothing all I have to do is this...
-            Game1.locations.Add(location);
-
-            foreach(SerializableDictionary<string, int> i in Game1.player.activeDialogueEvents)
-            {
-                foreach(KeyValuePair<string, int> j in i)
-                {
-                    this.Monitor.Log(j.Key, LogLevel.Debug);
-                }
-            }
-            */
         }
         #endregion
     }

@@ -69,6 +69,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="manifest.json" />
+    <None Include="[CP] Terrence\assets\RejuvenatingForest.tmx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="[CP] Terrence\assets\RejuvenatingForestCave.tmx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="[CP] Terrence\assets\Terrence.json" />
     <None Include="[QF] ForestQuest\quests.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

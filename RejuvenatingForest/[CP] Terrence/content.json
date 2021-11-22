@@ -1,6 +1,25 @@
 {
   "Format": "1.23.0",
+
+  "CustomLocations": [
+    {
+      "Name": "Custom_RejuvenatingForest",
+      "FromMapFile": "assets/RejuvenatingForest.tmx"
+    },
+    {
+      "Name": "Custom_RejuvenatingForestCave",
+      "FromMapFile": "assets/RejuvenatingForestCave.tmx"
+    }
+  ],
+
   "Changes": [
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Forest",
+      "AddWarps": [
+        "3 4 Custom_RejuvenatingForest 94 31"
+      ]
+    },
     {
       "Action": "Load",
       "Target": "Characters/Terrence",

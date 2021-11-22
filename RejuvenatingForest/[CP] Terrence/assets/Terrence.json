@@ -9,5 +9,6 @@
     "wizard.000": "I decided to walk over here to see if I could catch the Twizard.$0#$b#He lives in the Rejuvenating Forest and I want to make sure he can get home safe.",
     "late.000": "It's almost midnight, what are you still doing out here!$0#$b#Make sure you get home in time, you don't want to pass out!$s",
     "house.000": "I wonder who lives inside that house.$0#$b#I've never seen anyone come in or out...",
-    "bus.000": "$d bus#The bus is helpful to collect some of the items you can't find in the forest.$b#Head to the Desert and see what you can find!|#It's been a while since I've been to the Desert,$s#$b#You can get materials you can't find in the forest there.$0"
+    "bus.000": "$d bus#The bus is helpful to collect some of the items you can't find in the forest.$b#Head to the Desert and see what you can find!|#It's been a while since I've been to the Desert,$s#$b#You can get materials you can't find in the forest there.$0",
+
 }
