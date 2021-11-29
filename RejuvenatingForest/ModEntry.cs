@@ -105,9 +105,9 @@ namespace RejuvenatingForest
             // when you are loaded into the world, pressing buttons logs that button to the console
             //this.Monitor.Log($"{Game1.player.Name} pressed {e.Button}.", LogLevel.Debug);
 
-            if (!recievedRecipe && Game1.player.mailReceived.Contains("Custon_TTimber_ForestQuest_complete"))
+            if (!recievedRecipe && Game1.player.hasOrWillReceiveMail("Custon_TTimber_ForestQuest_complete"))
             {
-                Game1.player.craftingRecipes.Add("Fairy Dust", 0);
+                Game1.player.craftingRecipes.Add("Reward Fertilizer", 0);
                 recievedRecipe = true;
             }
         }

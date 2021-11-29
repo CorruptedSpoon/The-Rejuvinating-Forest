@@ -86,7 +86,7 @@
     <None Include="[JA] Reward\manifest.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="[JA] Reward\Objects\object.json">
+    <None Include="[JA] Reward\Objects\Fertilizer\object.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="[QF] ForestQuest\quests.json">
@@ -175,10 +175,10 @@
     <Content Include="[JA] Heart\Objects\heart\object.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="[JA] Reward\Objects\object.png">
+    <Content Include="[JA] Reward\Objects\Fertilizer\object.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="[JA] Reward\Objects\reward-ground.png">
+    <Content Include="[JA] Reward\Objects\Fertilizer\reward-ground.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -13,6 +13,6 @@
 			}
 		],
 		"CanPurchase": false,
-		"IsDefault": true
+		"IsDefault": false
 	},
 }

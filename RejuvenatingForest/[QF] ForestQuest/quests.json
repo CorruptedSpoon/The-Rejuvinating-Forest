@@ -18,7 +18,7 @@
         "RemoveWhenQuestCompleted": "forest_quest",
         "AddWhenQuestCompleted": "forest_quest_complete 5"
       },
-      "AddMailOnComplete": "Custon_TTimber_ForestQuest_complete"
+      "AddMailOnComplete": "Custon_TTimber_ForestQuest_complete noletter"
     }
   ],
   "Offers": [
