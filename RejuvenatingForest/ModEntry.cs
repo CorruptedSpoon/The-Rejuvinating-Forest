@@ -21,6 +21,13 @@ namespace RejuvenatingForest
     /// <summary>The mod entry point.</summary>
     public class ModEntry : Mod//, IAssetEditor, //IAssetLoader // sorry for the merge conflict nick :c
     {
+        IDictionary<string, string> explorerDialogue;
+        IDictionary<string, string> explorerSchedule;
+        Texture2D explorerSprite;
+        Texture2D explorerPortrait;
+
+        private bool recievedRecipe = false;
+
         #region Entry method
         /// <summary>The mod entry point, called after the mod is first loaded.</summary>
         /// <param name="helper">Provides simplified APIs for writing mods.</param>
@@ -54,9 +61,15 @@ namespace RejuvenatingForest
             // ignore if player hasn't loaded a save yet
             if (!Context.IsWorldReady)
                 return;
-            
+
             // when you are loaded into the world, pressing buttons logs that button to the console
-            this.Monitor.Log($"{Game1.player.Name} pressed {e.Button}.", LogLevel.Debug);
+            //this.Monitor.Log($"{Game1.player.Name} pressed {e.Button}.", LogLevel.Debug);
+
+            if (!recievedRecipe && Game1.player.hasOrWillReceiveMail("Custom_TTimber_ForestQuest_complete"))
+            {
+                Game1.player.craftingRecipes.Add("Reward Fertilizer", 0);
+                recievedRecipe = true;
+            }
         }
 
         /// <summary>Load the Rejuvenating Forest map into the world</summary>

@@ -57,25 +57,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameLocation_Patch.cs" />
-    <Compile Include="Globals.cs" />
-    <Compile Include="HarmonyPatcher.cs" />
-    <Compile Include="HarmonyPatches.cs" />
-    <Compile Include="HoeDirt_Patch.cs" />
-    <Compile Include="ModEntry.cs" />
+    <Compile Include="GameLocation_Patch.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Globals.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="HarmonyPatcher.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="HarmonyPatches.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="HoeDirt_Patch.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="ModEntry.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="manifest.json" />
+    <None Include="manifest.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="[CP] Terrence\assets\RejuvenatingForest.tmx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="[CP] Terrence\assets\RejuvenatingForestCave.tmx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="[CP] Terrence\assets\Terrence.json" />
+    <None Include="[CP] Terrence\assets\Terrence.json">
+    	<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="[JA] Reward\manifest.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="[JA] Reward\Objects\Fertilizer\object.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="[QF] ForestQuest\quests.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -142,6 +164,8 @@
     <Content Include="overallAssets\Twizard\TwizardDialogue.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="reward\reward-ground.png" />
+    <Content Include="reward\reward-inventory.png" />
     <Content Include="[CP] Terrence\assets\explorer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -158,6 +182,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="[JA] Heart\Objects\heart\object.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="[JA] Reward\Objects\Fertilizer\object.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="[JA] Reward\Objects\Fertilizer\reward-ground.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
