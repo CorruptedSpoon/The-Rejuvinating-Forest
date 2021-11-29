@@ -80,6 +80,8 @@ namespace RejuvenatingForest
 
             xTile.Map busStop = Game1.getLocationFromName("BusStop").Map;
 
+            //debug purposes
+            GameLocation RF = Game1.getLocationFromName("Forest");
 
             NPC.populateRoutesFromLocationToLocationList();
         }
