@@ -1,0 +1,19 @@
+﻿{
+  "Name": "Fertilizer",
+  "Author": "Suraj Bonthu",
+  "Version": "0.0.1",
+  "Description": "Changes the category of custom JA fertilizer",
+  "UniqueID": "TeamTimber.reward",
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  },
+  "Dependencies": [
+    {
+        "UniqueID": "TeamTimber.Reward",
+        "IsRequired": true
+    },
+    {   "UniqueID": "spacechase0.JsonAssets",
+        "IsRequired": true
+    }],
+  "UpdateKeys": [ "" ]
+}

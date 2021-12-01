@@ -3,7 +3,7 @@
   "Author": "Suraj Bonthu",
   "Version": "1.0.0",
   "Description": "Places heart of the forest item on the map.",
-  "UniqueID": "Suraj.FTMHeart",
+  "UniqueID": "TeamTimber.FTMHeart",
   "MinimumApiVersion": "2.10.0",
   "UpdateKeys": [],
   "ContentPackFor": {
