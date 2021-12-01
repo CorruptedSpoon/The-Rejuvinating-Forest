@@ -129,10 +129,4 @@
     <PackageReference Include="Lib.Harmony" Version="2.1.1" />
     <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.0.0" />
   </ItemGroup>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Pathoschild.Stardew.ModBuildConfig.4.0.0\build\Pathoschild.Stardew.ModBuildConfig.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Pathoschild.Stardew.ModBuildConfig.4.0.0\build\Pathoschild.Stardew.ModBuildConfig.targets'))" />
-  </Target>
 </Project>
