@@ -1,9 +1,9 @@
 {
-  "rain": "610 WizardHouse 2 6 3 \"Strings\\schedules\\Twizard:rain.000\"/1300 Custom_RejuvenatingForest 27 88 2 \"Strings\\schedules\\Twizard:rejuvenatingforest.000\"/1800 WizardHouse 2 6 3",
+  "rain": "610 WizardHouse 2 6 3 \"Strings\\schedules\\Twizard:rain.000\"/1300 Custom_RejuvenatingForest 90 29 2 \"Strings\\schedules\\Twizard:rejuvenatingforest.000\"/1800 WizardHouse 2 6 3",
   "winter_17": "610 WizardHouse 2 6 3/630 Forest 38 11 2/1800 WizardHouse 2 6 3",
-  "Mon": "610 WizardHouse 2 6 3/630 Forest 38 11 2/1300 Custom_RejuvenatingForest 27 88 2 \"Strings\\schedules\\Twizard:rejuvenatingforest.000\"/2300 WizardHouse 2 6 3",
-  "Wed": "610 WizardHouse 2 6 3/630 Forest 3 35 1/900 Forest 61 13 2/1300 Custom_RejuvenatingForest 27 88 2 \"Strings\\schedules\\Twizard:rejuvenatingforest.000\"/2300 WizardHouse 2 6 3",
-  "Sat": "610 WizardHouse 2 6 3/630 Forest 38 11 2/1300 Custom_RejuvenatingForest 27 88 2 \"Strings\\schedules\\Twizard:rejuvenatingforest.000\"/2300 WizardHouse 2 6 3",
-  "Sun": "610 WizardHouse 2 6 3/700 Forest 3 35 1/1000 Forest 38 11 2/1300 Custom_RejuvenatingForest 27 88 2 \"Strings\\schedules\\Twizard:rejuvenatingforest.000\"/2300 WizardHouse 2 6 3",
-  "spring": "610 WizardHouse 2 6 3/630 Forest 3 35 1/900 Forest 5 11 1 \"Strings\\schedules\\Twizard:woods.000\"/1100 Woods 5 16 1/1300 Custom_RejuvenatingForest 27 88 2 \"Strings\\schedules\\Twizard:rejuvenatingforest.000\"/2300 WizardHouse 2 6 3"
+  "Mon": "610 WizardHouse 2 6 3/630 Forest 38 11 2/900 Custom_RejuvenatingForest 90 29 2 \"Strings\\schedules\\Twizard:rejuvenatingforest.000\"/2300 WizardHouse 2 6 3",
+  "Wed": "610 WizardHouse 2 6 3/630 Forest 3 35 1/900 Forest 61 13 2/930 Custom_RejuvenatingForest 90 29 2 \"Strings\\schedules\\Twizard:rejuvenatingforest.000\"/2300 WizardHouse 2 6 3",
+  "Sat": "610 WizardHouse 2 6 3/630 Forest 38 11 2/930 Custom_RejuvenatingForest 90 29 2 \"Strings\\schedules\\Twizard:rejuvenatingforest.000\"/2300 WizardHouse 2 6 3",
+  "Sun": "610 WizardHouse 2 6 3/700 Forest 3 35 1/1000 Forest 38 11 2/1100 Custom_RejuvenatingForest 90 29 2 \"Strings\\schedules\\Twizard:rejuvenatingforest.000\"/2300 WizardHouse 2 6 3",
+  "spring": "610 WizardHouse 2 6 3/630 Forest 3 35 1/900 Forest 5 11 1 \"Strings\\schedules\\Twizard:woods.000\"/1100 Woods 5 16 1/1300 Custom_RejuvenatingForest 90 29 2 \"Strings\\schedules\\Twizard:rejuvenatingforest.000\"/2300 WizardHouse 2 6 3"
 }
