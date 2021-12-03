@@ -9,6 +9,11 @@
     <ProjectGuid>{647EC976-CA28-4D63-8F94-43D1E42006D0}</ProjectGuid>
     <Version>1.0.0</Version>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="[FTM] Heart\data\**" />
+    <EmbeddedResource Remove="[FTM] Heart\data\**" />
+    <None Remove="[FTM] Heart\data\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="manifest.json">
@@ -47,7 +52,6 @@
     <None Include="[CP] Terrence\content.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="packages.config" />
     <None Include="[CP] Twizard\assets\TwizardDialogue.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -73,9 +77,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="[FTM] Heart\content.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="[FTM] Heart\data\Twizzler_290015231_SaveData.save">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="[FTM] Heart\manifest.json">
@@ -128,5 +129,41 @@
     <PackageReference Include="Juice805.StardewConfigFramework" Version="2.0.0" />
     <PackageReference Include="Lib.Harmony" Version="2.1.1" />
     <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="GameLocation_Patch.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="Globals.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="HarmonyPatcher.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="HarmonyPatches.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="HoeDirt_Patch.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Update="ModEntry.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Maps\Custom_Woods.tmx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="[CP] Reward\content.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="[CP] Reward\manifest.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="[CP] Twizard\assets\Twizard.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
