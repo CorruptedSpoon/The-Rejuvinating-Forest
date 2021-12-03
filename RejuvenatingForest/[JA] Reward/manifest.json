@@ -5,5 +5,5 @@
   "Description": "Custom fertilizer.",
   "UniqueID": "TeamTimber.Reward",
   "UpdateKeys": [],
-  "ContentPackFor": { "UniqueID": "spacechase0.JsonAssets"}
+  "ContentPackFor": { "UniqueID": "spacechase0.JsonAssets" }
 }

@@ -1,9 +1,9 @@
 ﻿{
-  "Name": "Fertilizer",
+  "Name": "Fertilizer Category Fix",
   "Author": "Suraj Bonthu",
   "Version": "0.0.1",
   "Description": "Changes the category of custom JA fertilizer",
-  "UniqueID": "TeamTimber.reward",
+  "UniqueID": "TeamTimber.rewardCP",
   "ContentPackFor": {
     "UniqueID": "Pathoschild.ContentPatcher"
   },

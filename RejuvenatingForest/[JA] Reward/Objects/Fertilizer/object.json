@@ -1,0 +1,18 @@
+{
+	"Name": "Reward Fertilizer",
+	"Description": "The reward for completing the quest",
+	"Category": "Crafting",
+	"Edibility": "-300",
+	"EdibleIsDrink": "false",
+	"Recipe": {
+		"ResultCount": 1,
+		"Ingredients": [
+			{
+				"Object": 3000,
+				"Count": 1
+			}
+		],
+		"CanPurchase": false,
+		"IsDefault": false
+	},
+}
