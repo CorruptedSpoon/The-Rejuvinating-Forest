@@ -32,7 +32,7 @@ namespace RejuvenatingForest
 
             // TODO: Implement Magic Fertilizer as an overnight fertilizer
             // Quality retaining soil only
-            if (index == 371)
+            if (index == 3001)
             {
                 __instance.crop.growCompletely();
             }

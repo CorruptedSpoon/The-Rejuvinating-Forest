@@ -1,0 +1,17 @@
+{
+  "Format": "1.23.0",
+  "Changes": [
+    {
+      "Action": "EditData",
+      "Target": "Data/ObjectInformation",
+      "Fields": {      
+                "{{spacechase0.JsonAssets/ObjectID: Reward Fertilizer}}": {
+                    3: "Basic -19"
+                }
+      },
+      "When": {
+            "HasMod": "spacechase0.jsonAssets"
+      }
+    }
+  ]
+}

@@ -3,7 +3,7 @@
   "Author": "Suraj Bonthu",
   "Version": "1.0.0",
   "Description": "Custom fertilizer.",
-  "UniqueID": "Suraj.Reward",
+  "UniqueID": "TeamTimber.Reward",
   "UpdateKeys": [],
   "ContentPackFor": { "UniqueID": "spacechase0.JsonAssets" }
 }

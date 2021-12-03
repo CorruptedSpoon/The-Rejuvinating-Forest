@@ -1,9 +1,9 @@
 ﻿{
   "Name": "Heart of the Forest Item",
-  "Author": "Twiz",
+  "Author": "Suraj Bonthu",
   "Version": "1.0.0",
   "Description": "Heart of the Forest Item.",
-  "UniqueID": "Twiz.HOTF",
+  "UniqueID": "TeamTimber.HOTF",
   "UpdateKeys": [],
   "ContentPackFor": { "UniqueID": "spacechase0.JsonAssets" }
 }
