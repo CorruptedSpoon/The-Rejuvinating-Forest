@@ -18,7 +18,15 @@
       "Target": "Maps/Forest",
       "MapProperties": {
         "NPCWarp": "3 6 Custom_RejuvenatingForest 94 31"
-      },
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Woods",
+      "AddWarps": [
+        "3 17 Custom_RejuvenatingForest 94 31",
+        "3 18 Custom_RejuvenatingForest 94 32"
+      ]
     },
     {
       "Action": "Load",
