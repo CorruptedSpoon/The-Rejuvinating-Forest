@@ -29,6 +29,24 @@
       ]
     },
     {
+      "Action": "EditMap",
+      "PatchMode": "Replace",
+      "Target": "Maps/Woods",
+      "FromFile": "assets/Custom_Woods.tmx",
+      "FromArea": {
+        "X": 0,
+        "Y": 14,
+        "Width": 6,
+        "Height": 10
+      },
+      "ToArea": {
+        "X": 0,
+        "Y": 14,
+        "Width": 6,
+        "Height": 10
+      }
+    },
+    {
       "Action": "Load",
       "Target": "Characters/Terrence",
       "FromFile": "assets/explorer.png"

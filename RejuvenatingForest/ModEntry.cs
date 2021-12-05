@@ -98,7 +98,7 @@ namespace RejuvenatingForest
 
             NPC.populateRoutesFromLocationToLocationList();
 
-            LoadSecretWoodsChanges();
+            // LoadSecretWoodsChanges();
         }
 
         private void OnDayStart(object sender, DayStartedEventArgs e)

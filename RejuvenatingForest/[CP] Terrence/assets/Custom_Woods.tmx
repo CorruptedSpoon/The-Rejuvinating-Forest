@@ -12,7 +12,7 @@
   <property name="Warp" value="60 15 Forest 0 7 60 16 Forest 0 7"/>
  </properties>
  <tileset firstgid="1" name="Paths" tilewidth="16" tileheight="16" tilecount="36" columns="4">
-  <image source="paths" width="64" height="144"/>
+  <image source="paths.png" width="64" height="144"/>
  </tileset>
  <tileset firstgid="37" name="untitled tile sheet" tilewidth="16" tileheight="16" tilecount="1975" columns="25">
   <image source="spring_outdoorsTileSheet" width="400" height="1264"/>
