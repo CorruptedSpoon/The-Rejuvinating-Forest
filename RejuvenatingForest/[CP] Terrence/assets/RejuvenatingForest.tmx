@@ -9,7 +9,7 @@
   <property name="Spring_Objects" value="257 .5 404 .25"/>
   <property name="Stumps" value="24 6 3 29 7 3 26 10 3 46 6 3 34 26 3 41 26 3"/>
   <property name="Summer_Objects" value="258 .9 420 .25"/>
-  <property name="Warp" value="10 44 RejuvenatingForestCave 11 15 95 32 Woods 2 18 95 31 Woods 2 17"/>
+  <property name="Warp" value="10 44 RejuvenatingForestCave 11 15 96 31 Woods 0 19 96 32 Woods 0 20"/>
  </properties>
  <tileset firstgid="1" name="Paths" tilewidth="16" tileheight="16" tilecount="36" columns="4">
   <image source="paths" width="64" height="144"/>

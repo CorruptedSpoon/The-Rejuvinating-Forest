@@ -97,10 +97,67 @@ namespace RejuvenatingForest
             GameLocation RF = Game1.getLocationFromName("Forest");
 
             NPC.populateRoutesFromLocationToLocationList();
+
+            // LoadSecretWoodsChanges();
         }
 
         private void OnDayStart(object sender, DayStartedEventArgs e)
         {
+        }
+
+        private void LoadSecretWoodsChanges()
+        {
+            // Get a reference to Custom_Woods, but do NOT add it to the game.
+            // This is used solely to load the tiles that must be changed.
+            string customWoodsAssetKey = this.Helper.Content.GetActualAssetKey("Maps/Custom_Woods.tmx", ContentSource.ModFolder);
+            GameLocation custom_woods = new GameLocation(customWoodsAssetKey, "Custom_Woods") { IsOutdoors = true, IsFarm = false };
+            Map customWoodsMap = custom_woods.Map;
+
+            // Get a reference to the original woods
+            GameLocation woods = Game1.getLocationFromName("Woods");
+            Map woodsMap = woods.Map;
+
+            // Define layers and min/max bounds to copy over
+            string[] layerNames = { "Back", "Buildings", "Front", "Paths", "AlwaysFront" };
+            int minX = 0;
+            int maxX = 5;
+            int minY = 14;
+            int maxY = 23;
+
+            // Get a reference to the tile sheet.
+            // This assumes that the top-left corner of the Back layer is a non-null tile.
+            TileSheet woodsTileSheet = GetTileSheet(woodsMap);
+
+            // For each tile on each layer, copy the custom data into the original map
+            Tile tempTile;
+            foreach (string layerName in layerNames)
+            {
+                for(int x = minX; x <= maxX; x++)
+                {
+                    for(int y = minY; y <= maxY; y++)
+                    {
+                        tempTile = customWoodsMap.GetLayer(layerName).Tiles[x, y];
+                        
+                        // If this is a non-null tile, overwrite its tilesheet to match the real Woods map.
+                        // This skips having to use Content Patcher to inject Custom_Woods.tmx into the game
+                        // just to get a seasonal sprite sheet.
+                        //if (tempTile != null)
+                        //    tempTile.TileSheet = woodsTileSheet;
+
+                        woodsMap.GetLayer(layerName).Tiles[x, y] = tempTile;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Get a reference to the (first) tile sheet used on a map.
+        /// </summary>
+        /// <param name="map">Map object that only uses one tile sheet (Woods.tmx)</param>
+        /// <returns></returns>
+        private TileSheet GetTileSheet(Map map)
+        {
+            return map.TileSheets[0];
         }
         #endregion
     }
