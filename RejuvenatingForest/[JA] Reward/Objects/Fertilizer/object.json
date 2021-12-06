@@ -1,6 +1,6 @@
 {
-	"Name": "Reward Fertilizer",
-	"Description": "The reward for completing the quest",
+	"Name": "Magic Fertilizer",
+	"Description": "This fertilizer performs magic on crops, instantly growing them.",
 	"Category": "Crafting",
 	"Edibility": "-300",
 	"EdibleIsDrink": "false",
@@ -8,8 +8,20 @@
 		"ResultCount": 1,
 		"Ingredients": [
 			{
-				"Object": 3000,
-				"Count": 1
+				"Object": 535,
+				"Count": 5
+			},
+			{
+				"Object": 390,
+				"Count": 75				
+			},
+			{
+				"Object": 388,
+				"Count": 75				
+			},
+			{
+				"Object": 771,
+				"Count": 75				
 			}
 		],
 		"CanPurchase": false,

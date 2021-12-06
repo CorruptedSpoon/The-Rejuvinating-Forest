@@ -45,7 +45,7 @@
           "WeatherToday": [],
           "WeatherTomorrow": [],
           "EPUPreconditions": [],
-          "LimitedNumberOfSpawns": null
+          "LimitedNumberOfSpawns": 1
         },
         "DaysUntilSpawnsExpire": null
       }
