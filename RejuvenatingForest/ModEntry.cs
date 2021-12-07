@@ -67,7 +67,7 @@ namespace RejuvenatingForest
 
             if (!recievedRecipe && Game1.player.hasOrWillReceiveMail("Custom_TTimber_ForestQuest_complete"))
             {
-                Game1.player.craftingRecipes.Add("Reward Fertilizer", 0);
+                Game1.player.craftingRecipes.Add("Magic Fertilizer", 0);
                 recievedRecipe = true;
             }
         }
@@ -95,7 +95,10 @@ namespace RejuvenatingForest
 
             //debug purposes
             GameLocation RF = Game1.getLocationFromName("Forest");
+            // Update the bool flag to reflect whether the player already owns the recipe
+            recievedRecipe = Game1.player.knowsRecipe("Magic Fertilizer");
 
+            // Refresh the NPC routes so they can properly pathfind to the RejuvenatingForest
             NPC.populateRoutesFromLocationToLocationList();
 
             // LoadSecretWoodsChanges();
