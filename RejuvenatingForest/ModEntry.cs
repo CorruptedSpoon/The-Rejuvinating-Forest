@@ -15,17 +15,18 @@ using xTile.ObjectModel;
 
 // HARMONY
 using HarmonyLib;
+using StardewValley.TerrainFeatures;
 
 namespace RejuvenatingForest
 {
     /// <summary>The mod entry point.</summary>
-    public class ModEntry : Mod//, IAssetEditor, //IAssetLoader // sorry for the merge conflict nick :c
+    public class ModEntry : Mod
     {
-        IDictionary<string, string> explorerDialogue;
-        IDictionary<string, string> explorerSchedule;
-        Texture2D explorerSprite;
-        Texture2D explorerPortrait;
+        // Name of the map set in Content Patcher
+        private readonly string REJ_FOREST_MAP_NAME = "Custom_RejuvenatingForest";
+        private readonly string REJ_FOREST_CAVE_MAP_NAME = "Custom_RejuvenatingForestCave";
 
+        // Bool flag for whether the player has already been assigned the recipe
         private bool recievedRecipe = false;
 
         #region Entry method
@@ -37,10 +38,9 @@ namespace RejuvenatingForest
             Globals.Monitor = this.Monitor; // Monitor can be referenced by Globals.Logger.Log(...)
             Globals.Manifest = this.ModManifest; // Manifest can be referenced by Globals.Manifest
 
+            // Add event hooks for our own custom methods
             helper.Events.GameLoop.DayStarted += this.OnDayStart;
-
             helper.Events.Input.ButtonPressed += this.OnButtonPressed;
-
             // the game clears locations when loading the save, so load the custom map after the save loads
             helper.Events.GameLoop.SaveLoaded += this.OnSaveLoaded;
 
@@ -62,12 +62,11 @@ namespace RejuvenatingForest
             if (!Context.IsWorldReady)
                 return;
 
-            // when you are loaded into the world, pressing buttons logs that button to the console
-            //this.Monitor.Log($"{Game1.player.Name} pressed {e.Button}.", LogLevel.Debug);
-
+            // Use a frequent event check to add the Magic Fertilizer as soon as the player completes the quest line.
+            // TODO: Refactor this to use a less resource-intensive event hook (maybe Helper.Events.Player.InventoryChanged?)
             if (!recievedRecipe && Game1.player.hasOrWillReceiveMail("Custom_TTimber_ForestQuest_complete"))
             {
-                Game1.player.craftingRecipes.Add("Reward Fertilizer", 0);
+                Game1.player.craftingRecipes.Add("Magic Fertilizer", 0);
                 recievedRecipe = true;
             }
         }
@@ -77,30 +76,76 @@ namespace RejuvenatingForest
         /// <param name="args"></param>
         private void OnSaveLoaded(object sender, SaveLoadedEventArgs args)
         {
-            // get the internal asset key for the map file
-            string mapAssetKey = this.Helper.Content.GetActualAssetKey("Maps/RejuvenatingForest.tmx", ContentSource.ModFolder);
+            // Update the bool flag to reflect whether the player already owns the recipe
+            recievedRecipe = Game1.player.knowsRecipe("Magic Fertilizer");
 
-            // add the location
-            GameLocation location = new GameLocation(mapAssetKey, "RejuvenatingForest") { IsOutdoors = true, IsFarm = false };
-            Game1.locations.Add(location);
-
-            // get the internal asset key for the map file
-            string mapAssetKey2 = this.Helper.Content.GetActualAssetKey("Maps/RejuvenatingForestCave.tmx", ContentSource.ModFolder);
-
-            // add the location
-            GameLocation location2 = new GameLocation(mapAssetKey2, "RejuvenatingForestCave") { IsOutdoors = false, IsFarm = false };
-            Game1.locations.Add(location2);
-
-            xTile.Map busStop = Game1.getLocationFromName("BusStop").Map;
-
-            //debug purposes
-            GameLocation RF = Game1.getLocationFromName("Forest");
-
+            // Refresh the NPC routes so they can properly pathfind to the RejuvenatingForest
             NPC.populateRoutesFromLocationToLocationList();
+
+            // Apply logic conditional to whether the quest line has been completed
+            UpdateRejForestOnQuestStatus();
         }
 
         private void OnDayStart(object sender, DayStartedEventArgs e)
         {
+            // Apply logic conditional to whether the quest line has been completed
+            UpdateRejForestOnQuestStatus();
+        }
+
+        /// <summary>
+        /// Check to see if the Heart of the Forest quest line has been completed.
+        /// If so, remove the overgrowth so that the Wizard can successfully return home. :)
+        /// </summary>
+        private void UpdateRejForestOnQuestStatus()
+        {
+            // Ignore any update if the quest line hasn't been completed yet
+            if (!Game1.player.hasOrWillReceiveMail("Custom_TTimber_ForestQuest_complete"))
+                return;
+
+            // Loop through all locations to get a ref to RejuvenatingForest.
+            // Start at the end of the IList since RejuvenatingForest should be
+            // one of the last entries in the list.
+            GameLocation rejuvenatingForest = null;
+            IList<GameLocation> locations = Game1.locations;
+            for(int i = Game1.locations.Count - 1; i >= 0; i--)
+            {
+                if(locations[i].Name == REJ_FOREST_MAP_NAME) {
+                    rejuvenatingForest = locations[i];
+                    break;
+                }
+            }
+
+            // Check to make sure the map was found
+            if (rejuvenatingForest == null)
+                throw new KeyNotFoundException(
+                    "Map \"" + REJ_FOREST_MAP_NAME + "\" not found in Game1.locations" +
+                    " (has this method been called before OnSaveLoaded()?)");
+
+            // Success - handle all logic relevant to the quest being previously completed
+            Globals.Monitor.Log("Quest has been completed, removing bushes from Twizard's home", LogLevel.Debug);
+
+            // Remove the two berry bushes in front of the Twizard's door.
+            // A foreach doesn't work here since removing an object edits the collection's indexing.
+            // By starting at the end of the collection and indexing backwards,
+            // all indices are preserved while iterating.
+            for(int i = rejuvenatingForest.largeTerrainFeatures.Count - 1; i >= 0; i--)
+            {
+                // Get a reference to the current object in the loop
+                LargeTerrainFeature ltf = rejuvenatingForest.largeTerrainFeatures[i];
+
+                // Remove the object if it's at X = 74, Y = 30 (should be a bush)
+                if (ltf.tilePosition.Value == new Vector2(74, 30))
+                {
+                    rejuvenatingForest.largeTerrainFeatures.Remove(ltf); // Remove the Bush object
+                    rejuvenatingForest.Map.Layers[3].Tiles.Array[74, 30] = null; // Remove the tile for good measure
+                }
+                // Remove the object if it's at X = 72, Y = 31 (should be a bush)
+                else if (ltf.tilePosition.Value == new Vector2(72, 31))
+                {
+                    rejuvenatingForest.largeTerrainFeatures.Remove(ltf); // Remove the Bush object
+                    rejuvenatingForest.Map.Layers[3].Tiles.Array[72, 31] = null; // Remove the tile for good measure
+                }
+            }
         }
         #endregion
     }

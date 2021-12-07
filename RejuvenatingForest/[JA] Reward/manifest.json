@@ -1,8 +1,8 @@
 ﻿{
-  "Name": "Fertilizer",
+  "Name": "Magic Fertilizer",
   "Author": "Suraj Bonthu",
   "Version": "1.0.0",
-  "Description": "Custom fertilizer.",
+  "Description": "Magic Fertilizer.",
   "UniqueID": "TeamTimber.Reward",
   "UpdateKeys": [],
   "ContentPackFor": { "UniqueID": "spacechase0.JsonAssets" }

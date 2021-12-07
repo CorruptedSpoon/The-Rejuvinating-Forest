@@ -24,9 +24,27 @@
       "Action": "EditMap",
       "Target": "Maps/Woods",
       "AddWarps": [
-        "3 17 Custom_RejuvenatingForest 94 31",
-        "3 18 Custom_RejuvenatingForest 94 32"
+        "-1 19 Custom_RejuvenatingForest 95 31",
+        "-1 20 Custom_RejuvenatingForest 95 32"
       ]
+    },
+    {
+      "Action": "EditMap",
+      "PatchMode": "Replace",
+      "Target": "Maps/Woods",
+      "FromFile": "assets/Custom_Woods.tmx",
+      "FromArea": {
+        "X": 0,
+        "Y": 14,
+        "Width": 6,
+        "Height": 10
+      },
+      "ToArea": {
+        "X": 0,
+        "Y": 14,
+        "Width": 6,
+        "Height": 10
+      }
     },
     {
       "Action": "Load",

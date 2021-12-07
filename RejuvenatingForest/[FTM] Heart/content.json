@@ -19,7 +19,7 @@
           "Heart of the Forest"
         ],
         "UniqueAreaID": "Test area: Spawns items on the farm each day",
-        "MapName": "RejuvenatingForestCave",
+        "MapName": "Custom_RejuvenatingForestCave",
         "MinimumSpawnsPerDay": 1,
         "MaximumSpawnsPerDay": 1,
         "IncludeTerrainTypes": [],
@@ -45,7 +45,7 @@
           "WeatherToday": [],
           "WeatherTomorrow": [],
           "EPUPreconditions": [],
-          "LimitedNumberOfSpawns": null
+          "LimitedNumberOfSpawns": 1
         },
         "DaysUntilSpawnsExpire": null
       }

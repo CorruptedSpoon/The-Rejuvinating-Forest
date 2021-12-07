@@ -5,7 +5,7 @@
       "Action": "EditData",
       "Target": "Data/ObjectInformation",
       "Fields": {      
-                "{{spacechase0.JsonAssets/ObjectID: Reward Fertilizer}}": {
+                "{{spacechase0.JsonAssets/ObjectID: Magic Fertilizer}}": {
                     3: "Basic -19"
                 }
       },
