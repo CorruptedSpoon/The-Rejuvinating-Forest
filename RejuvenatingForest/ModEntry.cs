@@ -90,6 +90,16 @@ namespace RejuvenatingForest
         {
             // Apply logic conditional to whether the quest line has been completed
             UpdateRejForestOnQuestStatus();
+
+            //reload all the objects in the location
+            for (int i = Game1.locations.Count - 1; i >= 0; i--)
+            {
+                if (Game1.locations[i].Name == REJ_FOREST_MAP_NAME)
+                {
+                    Game1.locations[i].loadObjects();
+                    break;
+                }
+            }
         }
 
         /// <summary>
