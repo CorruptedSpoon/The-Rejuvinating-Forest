@@ -1,7 +1,7 @@
 ﻿{
   "Name": "Fertilizer Category Fix",
-  "Author": "Suraj Bonthu",
-  "Version": "0.0.1",
+  "Author": "Team Timber",
+  "Version": "1.0.0",
   "Description": "Changes the category of custom JA fertilizer",
   "UniqueID": "TeamTimber.rewardCP",
   "ContentPackFor": {
