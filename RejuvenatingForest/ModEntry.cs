@@ -229,12 +229,12 @@ namespace RejuvenatingForest
             }
 
             // Apply the same check for resource clumps (big rocks) too
-            for (int i = rejuvenatingForest.terrainFeatures.Count() - 1; i >= 0; i--)
+            for (int i = rejuvenatingForest.resourceClumps.Count() - 1; i >= 0; i--)
             {
                 // Get a reference to the current object in the loop
                 ResourceClump rc = rejuvenatingForest.resourceClumps[i];
-                int x = (int)rc.currentTileLocation.X;
-                int y = (int)rc.currentTileLocation.Y;
+                int x = (int)rc.tile.Value.X;
+                int y = (int)rc.tile.Value.Y;
 
                 // If this is the first instance of a terrain feature on a tile, record it
                 if (tileHasTerrainFeature[x, y] == false)
