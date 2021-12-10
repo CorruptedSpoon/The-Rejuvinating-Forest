@@ -5,14 +5,17 @@
       "Name": "forest_quest", // No id needed, will be automatically generated
       "Type": "LostItem", // Vanilla quest type
       "Title": "Rampant Growth",
-      "Description": "The Rejuvenating Forest has gotten out of control. Find the source of this problem, and consult the Wizard for help.",
-      "Objective": "Bring Wizard the source of the overgrowth",
+      "Description": "The Rejuvenating Forest has gotten out of control. Find the source of this problem, and consult the Twizard for help.",
+      "Objective": "Bring Twizard the source of the overgrowth",
       "DaysLeft": 0,
-      "Reward": 500,
-      "RewardType": "Money",
+      "Reward": "Magic Fertilizer",
+      "RewardType": "Object",
+      "RewardAmount": 1,
       "Cancelable": false,
-      "Trigger": "Wizard 3000 WizardHouse 0 10",
-      "ReactionText": "Ah I see you have cleared the forest of its overgrowth! It seems the heart was the culprit. Maybe we could create something of use with it.",
+      "Trigger": "Twizard 3000 Custom_RejuvenatingForestCave 12 12",
+      "ReactionText": "Ah I see you have discovered the source of the overgrowth! It looks like the heart was the culprit. 
+		$0#$b#Ah, perfect! Now the magic has been contained and the overgrowth is under control.
+		$0#$b#Here you go, here's my special fertilizer recipe as a gift. It grows your crops like...magic!",
       "ConversationTopic": {
         "AddWhenQuestAccepted": "forest_quest 20",
         "RemoveWhenQuestCompleted": "forest_quest",
