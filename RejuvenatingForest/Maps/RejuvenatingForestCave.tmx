@@ -5,6 +5,7 @@
   <property name="Arch" value="101 .005 110 .01 107 .003 105 .007"/>
   <property name="Debris" value="8 .015 3 10 .0001 1"/>
   <property name="Light_asdf" value="8 9 6 3 0 6 9 0 6 12 0 6 19 3 6"/>
+  <property name="Music" value="none"/>
   <property name="ViewportFollowPlayer" type="bool" value="true"/>
   <property name="Warp" value="11 17 Custom_RejuvenatingForest 10 45 18 10 Custom_RejuvenatingForest 91 27"/>
  </properties>
