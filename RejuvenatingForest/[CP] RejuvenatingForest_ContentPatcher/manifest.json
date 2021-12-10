@@ -1,0 +1,21 @@
+﻿{
+  "Name": "Terrence Explorer NPC",
+  "Author": "Team Timber",
+  "Version": "1.0.0",
+  "Description": "A collection of RejuvenatingForest's Maps and NPCs to be added via ContentPatcher",
+  "UniqueID": "TeamTimber.RejuvenatingForest_ContentPatcher",
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  },
+  "Dependencies": [
+    {
+      "UniqueID": "TeamTimber.Reward",
+      "IsRequired": true
+    },
+    {
+      "UniqueID": "spacechase0.JsonAssets",
+      "IsRequired": true
+    }
+  ],
+  "UpdateKeys": [ "" ]
+}

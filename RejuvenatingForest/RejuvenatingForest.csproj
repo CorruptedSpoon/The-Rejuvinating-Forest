@@ -10,22 +10,16 @@
     <Version>1.0.0</Version>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="reward\**" />
     <Compile Remove="[FTM] Heart\data\**" />
+    <EmbeddedResource Remove="reward\**" />
     <EmbeddedResource Remove="[FTM] Heart\data\**" />
+    <None Remove="reward\**" />
     <None Remove="[FTM] Heart\data\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="manifest.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="[CP] Terrence\assets\RejuvenatingForest.tmx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="[CP] Terrence\assets\RejuvenatingForestCave.tmx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="[CP] Terrence\assets\Terrence.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="[JA] Reward\manifest.json">
@@ -38,42 +32,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="[QF] ForestQuest\manifest.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="[CP] Terrence\assets\ExplorerDialogue.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="[CP] Terrence\assets\ExplorerSchedule.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="[CP] Terrence\manifest.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="[CP] Terrence\content.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="[CP] Twizard\assets\TwizardDialogue.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="[CP] Twizard\assets\TwizardSchedule.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="[CP] Twizard\content.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="[CP] Twizard\manifest.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="[CP] Wizard\content.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\RejuvenatingForestCave.tmx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Maps\RejuvenatingForest.tmx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="[CP] Wizard\manifest.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="[FTM] Heart\content.json">
@@ -91,24 +49,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="overallAssets\Twizard\Twizard.png">
+    <Content Include="[CP] RejuvenatingForest_ContentPatcher\TerrenceAssets\TerrenceSprites.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="overallAssets\Twizard\TwizardDialogue.png">
+    <Content Include="[CP] RejuvenatingForest_ContentPatcher\TerrenceAssets\TerrencePortraits.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="reward\reward-ground.png" />
-    <Content Include="reward\reward-inventory.png" />
-    <Content Include="[CP] Terrence\assets\explorer.png">
+    <Content Include="[CP] RejuvenatingForest_ContentPatcher\TwizardAssets\TwizardPortraits.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="[CP] Terrence\assets\explorerPortrait.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="[CP] Twizard\assets\TwizardPortraits.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="[CP] Twizard\assets\TwizardSprites.png">
+    <Content Include="[CP] RejuvenatingForest_ContentPatcher\TwizardAssets\TwizardSprites.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="[JA] Heart\Objects\heart\-.png">
@@ -153,17 +103,43 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="[CP] Terrence\assets\Custom_Woods.tmx">
+    <None Update="[CP] RejuvenatingForest_ContentPatcher\content.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="[CP] Reward\content.json">
+    <None Update="[CP] RejuvenatingForest_ContentPatcher\manifest.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="[CP] Reward\manifest.json">
+    <None Update="[CP] RejuvenatingForest_ContentPatcher\MapAssets\Custom_Woods.tmx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="[CP] Twizard\assets\Twizard.json">
+    <None Update="[CP] RejuvenatingForest_ContentPatcher\MapAssets\RejuvenatingForest.tmx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="[CP] RejuvenatingForest_ContentPatcher\MapAssets\RejuvenatingForestCave.tmx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="[CP] RejuvenatingForest_ContentPatcher\TerrenceAssets\Terrence.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="[CP] RejuvenatingForest_ContentPatcher\TerrenceAssets\TerrenceDialogue.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="[CP] RejuvenatingForest_ContentPatcher\TerrenceAssets\TerrenceSchedule.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="[CP] RejuvenatingForest_ContentPatcher\TwizardAssets\Twizard.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="[CP] RejuvenatingForest_ContentPatcher\TwizardAssets\TwizardDialogue.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="[CP] RejuvenatingForest_ContentPatcher\TwizardAssets\TwizardSchedule.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="[CP] RejuvenatingForest_ContentPatcher\MagicFertilizerAssets\" />
+    <Folder Include="[CP] RejuvenatingForest_ContentPatcher\WizardAssets\" />
   </ItemGroup>
 </Project>

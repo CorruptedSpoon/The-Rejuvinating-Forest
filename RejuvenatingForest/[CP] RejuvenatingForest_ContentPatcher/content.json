@@ -1,0 +1,157 @@
+{
+  "Format": "1.23.0",
+
+  "CustomLocations": [
+    {
+      "Name": "Custom_RejuvenatingForest",
+      "FromMapFile": "MapAssets/RejuvenatingForest.tmx"
+    },
+    {
+      "Name": "Custom_RejuvenatingForestCave",
+      "FromMapFile": "MapAssets/RejuvenatingForestCave.tmx"
+    }
+  ],
+
+  "Changes": [
+    /* MAGIC FERTILIZER */
+    {
+      "Action": "EditData",
+      "Target": "Data/ObjectInformation",
+      "Fields": {
+        "{{spacechase0.JsonAssets/ObjectID: Magic Fertilizer}}": {
+          3: "Basic -19"
+        }
+      },
+      "When": {
+        "HasMod": "spacechase0.jsonAssets"
+      }
+    },
+    /* MAPS */
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Forest",
+      "MapProperties": {
+        "NPCWarp": "3 6 Custom_RejuvenatingForest 94 31"
+      }
+    },
+    {
+      "Action": "EditMap",
+      "Target": "Maps/Woods",
+      "AddWarps": [
+        "-1 19 Custom_RejuvenatingForest 95 31",
+        "-1 20 Custom_RejuvenatingForest 95 32"
+      ]
+    },
+    {
+      "Action": "EditMap",
+      "PatchMode": "Replace",
+      "Target": "Maps/Woods",
+      "FromFile": "MapAssets/Custom_Woods.tmx",
+      "FromArea": {
+        "X": 0,
+        "Y": 14,
+        "Width": 6,
+        "Height": 10
+      },
+      "ToArea": {
+        "X": 0,
+        "Y": 14,
+        "Width": 6,
+        "Height": 10
+      }
+    },
+    /* TERRENCE */
+    {
+      "Action": "Load",
+      "Target": "Characters/Terrence",
+      "FromFile": "TerrenceAssets/TerrenceSprites.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Portraits/Terrence",
+      "FromFile": "TerrenceAssets/TerrencePortraits.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Characters/Dialogue/Terrence",
+      "FromFile": "TerrenceAssets/TerrenceDialogue.json"
+    },
+    {
+      "Action": "Load",
+      "Target": "Characters/schedules/Terrence",
+      "FromFile": "TerrenceAssets/TerrenceSchedule.json"
+    },
+    {
+      "Action": "Load",
+      "Target": "Strings/schedules/Terrence",
+      "FromFile": "TerrenceAssets/Terrence.json"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/NPCDispositions",
+      "Entries": {
+        "Terrence": "adult/polite/outgoing/positive/male/not-datable/null/Town/fall 17//Forest 4 5/Terrence"
+      }
+    },
+    /* TWIZARD */
+    {
+      "Action": "Load",
+      "Target": "Characters/Twizard",
+      "FromFile": "TwizardAssets/TwizardSprites.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Portraits/Twizard",
+      "FromFile": "TwizardAssets/TwizardPortraits.png"
+    },
+    {
+      "Action": "Load",
+      "Target": "Characters/Dialogue/Twizard",
+      "FromFile": "TwizardAssets/TwizardDialogue.json"
+    },
+    {
+      "Action": "Load",
+      "Target": "Characters/schedules/Twizard",
+      "FromFile": "TwizardAssets/TwizardSchedule.json"
+    },
+    {
+      "Action": "Load",
+      "Target": "Strings/schedules/Twizard",
+      "FromFile": "TwizardAssets/Twizard.json"
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/NPCDispositions",
+      "Entries": {
+        "Twizard": "adult/polite/neutral/neutral/male/not-datable/null/Other/winter 17//WizardHouse 2 6/Twizard"
+      }
+    },
+    /* WIZARD */
+    {
+      "Action": "EditData",
+      "Target": "Characters/Dialogue/Wizard",
+      "When": {
+        "HasConversationTopic |contains=forest_quest": "true"
+      },
+      "entries": {
+        "Introduction": "Have you seen my brother the Twizard?$b#He recently visited me, and after returning to the woods where he resides, I have not heard from him.$e#Maybe that explorer who traverses the woods knows of his whereabouts.",
+        "Wed": "I'm happy to have my brother as a guest, but since he hasn't been able to return home I have started to lose my patience.$r#All these wizard jokes are simply too much for me.",
+        "Fri": "$q# 10 Fri_alt#I wonder... Have you spoken with my brother yet?$r# 10 0 Fri_a1#Yes, he can't get into his house because the forest has become completely overgrown.$r# 11 0 Fri_a2#No, I havent found him.",
+        "Fri_alt": "I wonder what could possibly cause the forest to grow this rampantly!#$rNot only that, but the rapid regrowth truly perplexes me...",
+        "Fri_a1": "I see... a truly intriguing situation, but now I will have to help my brother with this mess.$r#I won't hear the end of his complaining!",
+        "Fri_a2": "Hmm... I guess I'll just have to find him myself.",
+        "Forest": "I believe there is magic at play here. It seems something from within the forest has caused this accelerated regrowth."
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Characters/Dialogue/Wizard",
+      "When": {
+        "HasConversationTopic |contains=forest_quest_complete": "true"
+      },
+      "entries": {
+        "Introduction": "Ah I see you have cleared the forest of its overgrowth! It seems the heart was creating a magical aura that was accelerating growth. Maybe we could create something of use with it."
+      }
+    }
+  ]
+}
