@@ -11,11 +11,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="reward\**" />
-    <Compile Remove="[FTM] Heart\data\**" />
+    <Compile Remove="[FTM] Heart\**" />
     <EmbeddedResource Remove="reward\**" />
-    <EmbeddedResource Remove="[FTM] Heart\data\**" />
+    <EmbeddedResource Remove="[FTM] Heart\**" />
     <None Remove="reward\**" />
-    <None Remove="[FTM] Heart\data\**" />
+    <None Remove="[FTM] Heart\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,12 +32,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="[QF] ForestQuest\manifest.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="[FTM] Heart\content.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="[FTM] Heart\manifest.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="[JA] Heart\manifest.json">
