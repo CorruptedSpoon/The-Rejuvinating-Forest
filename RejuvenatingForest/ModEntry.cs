@@ -25,9 +25,13 @@ namespace RejuvenatingForest
         // Name of the map set in Content Patcher
         private readonly string REJ_FOREST_MAP_NAME = "Custom_RejuvenatingForest";
         private readonly string REJ_FOREST_CAVE_MAP_NAME = "Custom_RejuvenatingForestCave";
+        private readonly string REWARD_FERTILIZER_NAME = "Magic Fertilizer";
 
         // Bool flag for whether the player has already been assigned the recipe
         private bool recievedRecipe = false;
+        // References to the custom maps
+        private GameLocation rejuvenatingForest;
+        private GameLocation rejuvenatingForestCave;
 
         #region Entry method
         /// <summary>The mod entry point, called after the mod is first loaded.</summary>
@@ -66,7 +70,7 @@ namespace RejuvenatingForest
             // TODO: Refactor this to use a less resource-intensive event hook (maybe Helper.Events.Player.InventoryChanged?)
             if (!recievedRecipe && Game1.player.hasOrWillReceiveMail("Custom_TTimber_ForestQuest_complete"))
             {
-                Game1.player.craftingRecipes.Add("Magic Fertilizer", 0);
+                Game1.player.craftingRecipes.Add(REWARD_FERTILIZER_NAME, 0);
                 recievedRecipe = true;
             }
         }
@@ -77,7 +81,10 @@ namespace RejuvenatingForest
         private void OnSaveLoaded(object sender, SaveLoadedEventArgs args)
         {
             // Update the bool flag to reflect whether the player already owns the recipe
-            recievedRecipe = Game1.player.knowsRecipe("Magic Fertilizer");
+            recievedRecipe = Game1.player.knowsRecipe(REWARD_FERTILIZER_NAME);
+
+            rejuvenatingForest = GetGameLocationByName(REJ_FOREST_MAP_NAME);
+            rejuvenatingForestCave = GetGameLocationByName(REJ_FOREST_CAVE_MAP_NAME); // Not yet used, but added for extensibility
 
             // Refresh the NPC routes so they can properly pathfind to the RejuvenatingForest
             NPC.populateRoutesFromLocationToLocationList();
@@ -92,14 +99,34 @@ namespace RejuvenatingForest
             UpdateRejForestOnQuestStatus();
 
             //reload all the objects in the location
+            // TODO: Refactor in the future, causes duplicate LargeTerrainFeatures
+            rejuvenatingForest.loadObjects();
+            RemoveDuplicateTerrainFeatures();
+        }
+
+        /// <summary>
+        /// Search for a reference of a GameLocation by the map's name.
+        /// </summary>
+        /// <param name="locationName">Name of the map (Woods, Forest, etc.)</param>
+        /// <returns></returns>
+        private GameLocation GetGameLocationByName(string locationName)
+        {
+            // Loop through all locations to get a ref to RejuvenatingForest.
+            // Start at the end of the IList since RejuvenatingForest should be
+            // one of the last entries in the list.
+            IList<GameLocation> locations = Game1.locations;
             for (int i = Game1.locations.Count - 1; i >= 0; i--)
             {
-                if (Game1.locations[i].Name == REJ_FOREST_MAP_NAME)
+                if (locations[i].Name == locationName)
                 {
-                    Game1.locations[i].loadObjects();
-                    break;
+                    return locations[i];
                 }
             }
+
+            // No map was found out of all GameLocations
+            throw new KeyNotFoundException(
+                "Map \"" + locationName + "\" not found in Game1.locations" +
+                " (has this method been called before OnSaveLoaded()?)");
         }
 
         /// <summary>
@@ -111,25 +138,6 @@ namespace RejuvenatingForest
             // Ignore any update if the quest line hasn't been completed yet
             if (!Game1.player.hasOrWillReceiveMail("Custom_TTimber_ForestQuest_complete"))
                 return;
-
-            // Loop through all locations to get a ref to RejuvenatingForest.
-            // Start at the end of the IList since RejuvenatingForest should be
-            // one of the last entries in the list.
-            GameLocation rejuvenatingForest = null;
-            IList<GameLocation> locations = Game1.locations;
-            for(int i = Game1.locations.Count - 1; i >= 0; i--)
-            {
-                if(locations[i].Name == REJ_FOREST_MAP_NAME) {
-                    rejuvenatingForest = locations[i];
-                    break;
-                }
-            }
-
-            // Check to make sure the map was found
-            if (rejuvenatingForest == null)
-                throw new KeyNotFoundException(
-                    "Map \"" + REJ_FOREST_MAP_NAME + "\" not found in Game1.locations" +
-                    " (has this method been called before OnSaveLoaded()?)");
 
             // Success - handle all logic relevant to the quest being previously completed
             Globals.Monitor.Log("Quest has been completed, removing bushes from Twizard's home", LogLevel.Debug);
@@ -154,6 +162,90 @@ namespace RejuvenatingForest
                 {
                     rejuvenatingForest.largeTerrainFeatures.Remove(ltf); // Remove the Bush object
                     rejuvenatingForest.Map.Layers[3].Tiles.Array[72, 31] = null; // Remove the tile for good measure
+                }
+            }
+        }
+
+        /// <summary>
+        /// When rejuvenatingForest.loadObjects() is called, this loads new objects without removing the old ones.
+        /// It is important to keep *some* items (e.g. trees) so they continue growing.
+        /// However, duplicate bushes, stumps, rocks, etc. are unintended, and are causing visual tearing/extra drops.
+        /// As a workaround, remove all duplicate objects from the map.
+        /// 
+        /// TODO: Refactor this method, it is a workaround for rejuvenatingForest.loadObjects() 
+        /// that is also expensive to run.
+        /// </summary>
+        private void RemoveDuplicateTerrainFeatures()
+        {
+            /****************************************
+             * please deprecate this forbidden code *
+             ****************************************/
+
+            // 2D array representing each tile on the map
+            bool[,] tileHasTerrainFeature = new bool[
+                rejuvenatingForest.map.Layers[0].LayerWidth, 
+                rejuvenatingForest.map.Layers[0].LayerHeight];
+
+            // Remove any duplicate LargeTerrainFeatures
+            for (int i = rejuvenatingForest.largeTerrainFeatures.Count - 1; i >= 0; i--)
+            {
+                // Get a reference to the current object in the loop
+                LargeTerrainFeature ltf = rejuvenatingForest.largeTerrainFeatures[i];
+                int x = (int)ltf.tilePosition.Value.X;
+                int y = (int)ltf.tilePosition.Value.Y;
+
+                // If this is the first instance of a terrain feature on a tile, record it
+                if (tileHasTerrainFeature[x, y] == false)
+                {
+                    tileHasTerrainFeature[x, y] = true;
+                }
+                // If a terrain feature already exists at that tile, remove this feature instead
+                else
+                {
+                    rejuvenatingForest.largeTerrainFeatures.RemoveAt(i);
+                    Globals.Monitor.Log("Found and removing a duplicate LTF: [" + x + ", " + y + "]", LogLevel.Debug);
+                }
+            }
+
+            // Apply the same check for normal terrain features too
+            for (int i = rejuvenatingForest.terrainFeatures.Count() - 1; i >= 0; i--)
+            {
+                // Get a reference to the current object in the loop
+                TerrainFeature tf = rejuvenatingForest.terrainFeatures.Values.ElementAt(i);
+                int x = (int)tf.currentTileLocation.X;
+                int y = (int)tf.currentTileLocation.Y;
+
+                // If this is the first instance of a terrain feature on a tile, record it
+                if (tileHasTerrainFeature[x, y] == false)
+                {
+                    tileHasTerrainFeature[x, y] = true;
+                }
+                // If a terrain feature already exists at that tile, remove this feature instead
+                else
+                {
+                    rejuvenatingForest.terrainFeatures.Remove(new Vector2(x, y));
+                    Globals.Monitor.Log("Found and removing a duplicate TF: [" + x + ", " + y + "]", LogLevel.Debug);
+                }
+            }
+
+            // Apply the same check for resource clumps (big rocks) too
+            for (int i = rejuvenatingForest.terrainFeatures.Count() - 1; i >= 0; i--)
+            {
+                // Get a reference to the current object in the loop
+                ResourceClump rc = rejuvenatingForest.resourceClumps[i];
+                int x = (int)rc.currentTileLocation.X;
+                int y = (int)rc.currentTileLocation.Y;
+
+                // If this is the first instance of a terrain feature on a tile, record it
+                if (tileHasTerrainFeature[x, y] == false)
+                {
+                    tileHasTerrainFeature[x, y] = true;
+                }
+                // If a terrain feature already exists at that tile, remove this feature instead
+                else
+                {
+                    rejuvenatingForest.resourceClumps.RemoveAt(i);
+                    Globals.Monitor.Log("Found and removing a duplicate RC: [" + x + ", " + y + "]", LogLevel.Debug);
                 }
             }
         }
