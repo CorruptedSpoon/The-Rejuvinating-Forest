@@ -86,6 +86,9 @@ namespace RejuvenatingForest
             rejuvenatingForest = GetGameLocationByName(REJ_FOREST_MAP_NAME);
             rejuvenatingForestCave = GetGameLocationByName(REJ_FOREST_CAVE_MAP_NAME); // Not yet used, but added for extensibility
 
+            // Clear the log outside the Secret Woods so players can enter for the quest on day 1
+            RemoveForestToWoodsLog();
+
             // Refresh the NPC routes so they can properly pathfind to the RejuvenatingForest
             NPC.populateRoutesFromLocationToLocationList();
 
@@ -102,6 +105,15 @@ namespace RejuvenatingForest
             // TODO: Refactor in the future, causes duplicate LargeTerrainFeatures
             rejuvenatingForest.loadObjects();
             RemoveDuplicateTerrainFeatures();
+        }
+
+        /// <summary>
+        /// Remove the log that blocks the player from entering the Secret Woods (if it still exists).
+        /// </summary>
+        private void RemoveForestToWoodsLog()
+        {
+            StardewValley.Locations.Forest forest = (GetGameLocationByName("Forest") as StardewValley.Locations.Forest);
+            forest.log = null;
         }
 
         /// <summary>
