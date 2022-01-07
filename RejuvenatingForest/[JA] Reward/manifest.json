@@ -4,6 +4,6 @@
   "Version": "1.0.0",
   "Description": "Magic Fertilizer.",
   "UniqueID": "TeamTimber.Reward",
-  "UpdateKeys": [],
+  "UpdateKeys": [ "Nexus:10322" ],
   "ContentPackFor": { "UniqueID": "spacechase0.JsonAssets" }
 }

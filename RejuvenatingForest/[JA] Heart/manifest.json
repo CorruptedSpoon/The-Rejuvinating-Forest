@@ -4,6 +4,6 @@
   "Version": "1.0.0",
   "Description": "Heart of the Forest Item.",
   "UniqueID": "TeamTimber.HOTF",
-  "UpdateKeys": [],
+  "UpdateKeys": [ "Nexus:10322" ],
   "ContentPackFor": { "UniqueID": "spacechase0.JsonAssets" }
 }

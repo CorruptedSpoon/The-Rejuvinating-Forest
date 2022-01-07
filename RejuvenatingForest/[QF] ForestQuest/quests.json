@@ -12,7 +12,7 @@
       "RewardType": "Object",
       "RewardAmount": 1,
       "Cancelable": false,
-      "Trigger": "Twizard 3000 Custom_RejuvenatingForestCave 11 9",
+      "Trigger": "Twizard {{ja:Heart of the Forest}} Custom_RejuvenatingForestCave 11 9",
       "ReactionText": "Ah I see you have discovered the source of the overgrowth! It looks like the heart was the culprit. 
 		$0#$b#Ah, perfect! Now the magic has been contained and the overgrowth is under control.
 		$0#$b#Here you go, here's my special fertilizer recipe as a gift. It grows your crops like...magic!",

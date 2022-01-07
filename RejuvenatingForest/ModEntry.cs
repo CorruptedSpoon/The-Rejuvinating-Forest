@@ -103,8 +103,11 @@ namespace RejuvenatingForest
 
             //reload all the objects in the location
             // TODO: Refactor in the future, causes duplicate LargeTerrainFeatures
-            rejuvenatingForest.loadObjects();
-            RemoveDuplicateTerrainFeatures();
+            if (!recievedRecipe)
+            {
+                rejuvenatingForest.loadObjects();
+                RemoveDuplicateTerrainFeatures();
+            }
         }
 
         /// <summary>
