@@ -93,6 +93,13 @@
         "Terrence": "adult/polite/outgoing/positive/male/not-datable/null/Town/fall 17//Forest 4 5/Terrence"
       }
     },
+    {
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "Terrence": " This is an amazing gift @! Thank you so much./-17 -18/Oh @, you sure know how to give a gift!/-79 -80/I will take this but I'm not sure why.../-26/I really do not prefer this, sorry @./-8 -24/Oh a gift, thanks./-23 -27/ "
+      }
+    },
     /* TWIZARD */
     {
       "Action": "Load",
@@ -124,6 +131,35 @@
       "Target": "Data/NPCDispositions",
       "Entries": {
         "Twizard": "adult/polite/neutral/neutral/male/not-datable/null/Other/winter 17//WizardHouse 2 6/Twizard"
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "Twizard": " Oh wow @! This is marvelous./-2 -23/Thank you! I really appreciate it./-27/This is... for me?/-5 -8/Is this a prank my brother got you in on?/-6 -21/Thank you for thinking of me, @./-18/ "
+      }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Characters/Dialogue/Twizard",
+      "When": {
+        "HasConversationTopic |contains=forest_quest_complete": "true"
+      },
+      "Entries": {
+        "Mon":
+          "Now that the heart is gone, I can be home!
+            $1#$b#I hope my advice was helpful to your adventure.
+            $0#$b#I've been told I can make things more confusing than they should be!
+          $1#$e#",
+        "Tue": 
+          "Thank you for retrieving the heart!
+            $1#$b#It is so nice to be back home.
+          $1#$e#",
+        "Wed": 
+          "I you met Marnie just east of here? She is so nice to talk to.
+            $0#$b#She lets me ramble about the woods.
+          $1#$e#",
       }
     },
     /* WIZARD */
